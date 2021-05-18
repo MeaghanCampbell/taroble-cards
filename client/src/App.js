@@ -53,7 +53,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Nav />
-        <div>
+        <main>
           <Switch>
             <Route exact path="/">
               <Home />
@@ -71,7 +71,7 @@ function App() {
               <Dashboard />
             </Route>
           </Switch>
-        </div>
+        </main>
       </Router>
 
     </ApolloProvider>

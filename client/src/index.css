@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Potra';
-  src: local('Potra'), url(./fonts/potra/Potra.ttf) format('truetype');
+  src: local('Potra'), url(./assets/fonts/potra/Potra.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Armwarmer';
-  src: local('Armwarmer'), url(./fonts/armwarmer/Armwarmer.otf) format('truetype');
+  src: local('Armwarmer'), url(./assets/fonts/armwarmer/Armwarmer.otf) format('truetype');
 }
 
 @font-face {
   font-family: 'Drugs';
-  src: local('Drugs'), url(./fonts/drugs/Drugs.otf) format('truetype');
+  src: local('Drugs'), url(./assets/fonts/drugs/Drugs.otf) format('truetype');
 }
 
 html, body {
@@ -20,13 +20,22 @@ html, body {
   /* overflow: hidden; */
 }
 
+main {
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   font-family: Drugs;
+  font-size: 18px;
   outline: none;
   color: #CC9B54;
-  border: 1px solid #CC9B54;
+  border: 0px solid #CC9B54;
+  box-shadow: 0 0 10px #CC9B54;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
   height: 30px;
   width: 200px;
 }
@@ -37,24 +46,51 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: Drugs;
   color: #CC9B54;
   background-color: black;
-  height: 40px;
-
+  height: 35px;
+  padding: 1vw;
 }
 
-Link {
-  
-    color: inherit; 
-    text-decoration: inherit; 
+.title-nav {
+  font-family: Potra;
+  text-decoration: none;
+  color: #CC9B54;
+  font-size: 3.5vh;
+}
+
+.signup-login {
+  font-family: Drugs;
+  text-decoration: none;
+  color: #CC9B54;
+  font-size: 2vh;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li {
+  padding-right: 10px;
 }
 
 /* Homepage Styles */
+
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
 
 .title-home {
   font-family: Potra;
   color: #CC9B54;
   text-shadow: 0 0 20px #CC9B54;
-  font-size: 40px;
+  font-size: 6vh;
 }
