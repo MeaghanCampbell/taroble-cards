@@ -1,1 +1,60 @@
+@font-face {
+  font-family: 'Potra';
+  src: local('Potra'), url(./fonts/potra/Potra.ttf) format('truetype');
+}
 
+@font-face {
+  font-family: 'Armwarmer';
+  src: local('Armwarmer'), url(./fonts/armwarmer/Armwarmer.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Drugs';
+  src: local('Drugs'), url(./fonts/drugs/Drugs.otf) format('truetype');
+}
+
+html, body {
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  /* overflow: hidden; */
+}
+
+button {
+  font-family: Drugs;
+  outline: none;
+  color: #CC9B54;
+  border: 1px solid #CC9B54;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  height: 30px;
+  width: 200px;
+}
+
+/* Nav Styles */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Drugs;
+  color: #CC9B54;
+  background-color: black;
+  height: 40px;
+
+}
+
+Link {
+  
+    color: inherit; 
+    text-decoration: inherit; 
+}
+
+/* Homepage Styles */
+
+.title-home {
+  font-family: Potra;
+  color: #CC9B54;
+  text-shadow: 0 0 20px #CC9B54;
+  font-size: 40px;
+}

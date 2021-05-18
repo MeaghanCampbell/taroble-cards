@@ -46,7 +46,7 @@ const Login = (props) => {
                                     id="email"
                                     name="email"
                                     type="email"
-                                    placeholder="Your email"
+                                    placeholder="email"
                                     autoComplete="email"
                                     required
                                     value={formState.email}
@@ -57,7 +57,7 @@ const Login = (props) => {
 
                         <div>
                             <label htmlFor="password">
-                                Password
+                                password
                             </label>
                             <div>
                                 <input
