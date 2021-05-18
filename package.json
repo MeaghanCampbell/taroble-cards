@@ -1,0 +1,29 @@
+{
+  "name": "user-login-template",
+  "version": "1.0.0",
+  "description": "Just a template made using Mongoose, Apollo, and GraphQL with basic user login, validation and JWT Authentication functionality",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "heroku-postbuild": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jscottrumptz/user-login-template.git"
+  },
+  "author": "J. Scott Rumptz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jscottrumptz/user-login-template/issues"
+  },
+  "homepage": "https://github.com/jscottrumptz/user-login-template#readme",
+  "dependencies": {
+    "if-env": "^1.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.2"
+  }
+}
