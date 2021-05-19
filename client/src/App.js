@@ -14,7 +14,7 @@ import Nav from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
 import Dashboard from "./components/Dashboard/Dashboard";
 import CardDetail from "./components/CardDetail/Detail";
-import Loading from './components/LoadingScreen/Loading';
+// import Loading from './components/LoadingScreen/Loading';
 
 
 
@@ -75,7 +75,6 @@ function App() {
             </Route>
           </Switch>
         </main>
-        <Loading />
       </Router>
 
     </ApolloProvider>
