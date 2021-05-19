@@ -28,16 +28,20 @@ main {
 }
 
 button {
-  font-family: Drugs;
-  font-size: 18px;
+  font-family: 'Drugs';
+  font-size: 15px;
+  text-align: center;
   outline: none;
-  color: #CC9B54;
-  border: 0px solid #CC9B54;
-  box-shadow: 0 0 10px #CC9B54;
+  color: #CC9B54 !important;
+  border: 1px solid #CC9B54;
   border-radius: 5px;
   background-color: transparent;
   height: 30px;
   width: 200px;
+}
+
+button:hover {
+  box-shadow: 0 0 10px #CC9B54;
 }
 
 /* Nav Styles */
@@ -46,21 +50,22 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #CC9B54;
   background-color: black;
   height: 35px;
   padding: 1vw;
 }
 
 .title-nav {
-  font-family: Potra;
+  font-family: 'Potra';
   text-decoration: none;
   color: #CC9B54;
   font-size: 3.5vh;
+  margin-left: 10px;
+
 }
 
 .signup-login {
-  font-family: Drugs;
+  font-family: 'Drugs';
   text-decoration: none;
   color: #CC9B54;
   font-size: 2vh;
@@ -68,6 +73,10 @@ header {
 
 ul li {
   list-style-type: none;
+}
+
+li:hover {
+  text-shadow: 0 0 3px #CC9B54;
 }
 
 ul {
@@ -89,8 +98,58 @@ li {
 }
 
 .title-home {
-  font-family: Potra;
+  font-family: 'Potra';
   color: #CC9B54;
   text-shadow: 0 0 20px #CC9B54;
   font-size: 6vh;
+}
+
+/* Sign Up & Login Styles */
+
+.login-signup-form {
+  height: 45vh;
+  width: 75vw;
+  background-color: black;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.form-header {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  font-family: 'Armwarmer';
+  color: white;
+  margin: 0;
+}
+
+input {
+  font-family: 'Drugs';
+  font-size: 15px;
+  text-align: center;
+  outline: none;
+  color: #CC9B54 !important;
+  border: 1px solid #CC9B54;
+  border-radius: 3px;
+  background-color: transparent;
+  height: 28px;
+  width: 250px;
+  margin: 20px 0 0;
+}
+
+input:hover {
+  box-shadow: 0 0 10px #CC9B54;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+}
+
+::placeholder {
+  color: #CC9B54;
+}
+
+.sign-in-btn {
+  margin-top: 30px;
 }
