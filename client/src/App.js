@@ -75,7 +75,6 @@ function App() {
             </Route>
           </Switch>
         </main>
-        <Loading />
       </Router>
 
     </ApolloProvider>

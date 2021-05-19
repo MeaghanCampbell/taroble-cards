@@ -5,7 +5,7 @@ const Loading = () => {
     return (
         <div>
             <div className="load-img-container">
-                <img src={logo} alt="Taroble cards logo" />
+                <img src={logo} className='t' alt="Taroble cards logo" />
             </div>
         </div>
     )
