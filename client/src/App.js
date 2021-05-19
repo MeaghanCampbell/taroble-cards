@@ -33,11 +33,27 @@ const client = new ApolloClient({
 });
 
 function App() {
+
+  window.VANTA.FOG({
+    el: "body",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    highlightColor: 0x666666,
+    midtoneColor: 0x0,
+    lowlightColor: 0x0,
+    baseColor: 0x0,
+    blurFactor: 0.45,
+    speed: 0.60
+  })
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <Nav />
-        <div>
+        <main>
           <Switch>
             <Route exact path="/">
               <Home />
@@ -55,7 +71,7 @@ function App() {
               <Dashboard />
             </Route>
           </Switch>
-        </div>
+        </main>
       </Router>
 
     </ApolloProvider>
