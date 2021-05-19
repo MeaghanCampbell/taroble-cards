@@ -14,6 +14,8 @@ import Nav from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
 import Dashboard from "./components/Dashboard/Dashboard";
 import CardDetail from "./components/CardDetail/Detail";
+import Footer from './components/Footer/Footer';
+
 
 
 const client = new ApolloClient({
@@ -72,6 +74,7 @@ function App() {
             </Route>
           </Switch>
         </main>
+        <Footer />
       </Router>
 
     </ApolloProvider>
