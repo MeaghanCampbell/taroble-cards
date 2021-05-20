@@ -9,7 +9,7 @@ const Home = () => {
 			</div>
 			<div className='container'>
 				<button type="submit">
-					<Link to="/card-detail">GET A READING</Link>
+					<Link to="/card-detail" className='btn-text'>GET A READING</Link>
 				</button>
 			</div>
 		</div>

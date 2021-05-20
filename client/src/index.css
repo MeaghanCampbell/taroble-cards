@@ -46,6 +46,12 @@ button:hover {
   box-shadow: 0 0 10px #CC9B54;
 }
 
+.btn-text {
+  font-family: 'Drugs';
+  color: #CC9B54;
+  text-decoration: none;
+}
+
 /* Loading Page Styles */
 
 .load-img-container {
