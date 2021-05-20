@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/jscottrumptz/user-login-template#readme",
   "dependencies": {
+    "animejs": "^3.2.1",
     "if-env": "^1.0.4",
+    "moment": "^2.29.1",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {

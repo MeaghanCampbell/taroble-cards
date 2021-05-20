@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 // ApolloProvider, is a special type of React component that we'll use to provide data to all of the other components
 import { ApolloProvider } from '@apollo/react-hooks';
 
@@ -13,7 +12,10 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import CardDetail from "./components/CardDetail";
-import LoadingScreen from './components/LoadingScreen';
+// import Loading from './components/LoadingScreen';
+
+
+
 
 const client = new ApolloClient({
   request: operation => {
@@ -61,7 +63,7 @@ function App() {
             <Route path="/dashboard" component={Dashboard} />
           </Switch>
         </main>
-        <LoadingScreen/>
+        {/* <Loading /> */}
       </Router>
 
     </ApolloProvider>

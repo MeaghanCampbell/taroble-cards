@@ -8,38 +8,40 @@ const Nav = () => {
         event.preventDefault();
         Auth.logout();
     };
-      
+
 
     return (
         <header>
+            <div className="header-center">
                 <h3>
                     <Link to="/" className='title-nav'>Taroble Cards</Link>
                 </h3>
-            {Auth.loggedIn() ? (
-                <>
-                <ul>
-                    <li>
-                        <Link to="/dashboard" className="signup-login">DASHBOARD</Link>
-                    </li>
-                    <li>
-                        <a href="/" onClick={logout} className="signup-login">
-                            LOGOUT
+                {Auth.loggedIn() ? (
+                    <>
+                        <ul>
+                            <li>
+                                <Link to="/dashboard" className="signup-login">DASHBOARD</Link>
+                            </li>
+                            <li>
+                                <a href="/" onClick={logout} className="signup-login">
+                                    LOGOUT
                         </a>
-                    </li>
-                </ul>
-                </>
-            ) : (
-                <>
-                <ul>
-                    <li>
-                        <Link to="/login" className='signup-login'>LOGIN</Link>
-                    </li>
-                    <li>
-                        <Link to="/signup" className='signup-login'>SIGNUP</Link>
-                    </li>
-                </ul>
-                </>
-            )}
+                            </li>
+                        </ul>
+                    </>
+                ) : (
+                    <>
+                        <ul>
+                            <li>
+                                <Link to="/login" className='signup-login'>LOGIN</Link>
+                            </li>
+                            <li>
+                                <Link to="/signup" className='signup-login'>SIGNUP</Link>
+                            </li>
+                        </ul>
+                    </>
+                )}
+            </div>
         </header>
     )
 }

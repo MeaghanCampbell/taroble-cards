@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
 	return (
-		<div>
-			<div className='container'>
+		<section>
+			<div className=" home-section section-center">
 				<h1 className='title-home'>Taroble Cards</h1>
+				<div className='get-reading-btn'>
+					<button type="submit">
+						<Link to="/card-detail" className="get-reading-link">GET A READING</Link>
+					</button>
+				</div>
 			</div>
-			<div className='container'>
-				<button type="submit">
-					<Link to="/card-detail" className='btn-text'>GET A READING</Link>
-				</button>
-			</div>
-		</div>
+		</section>
 	)
 }
 
