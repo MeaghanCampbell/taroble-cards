@@ -22,7 +22,8 @@
   "homepage": "https://github.com/jscottrumptz/user-login-template#readme",
   "dependencies": {
     "if-env": "^1.0.4",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-spring": "^9.1.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.2"

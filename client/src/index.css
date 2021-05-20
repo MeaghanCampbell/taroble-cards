@@ -167,3 +167,49 @@ input:-webkit-autofill {
 .sign-in-btn {
   margin-top: 30px;
 }
+
+/* Card Detail Styles */
+
+section{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+h2{
+  margin: 2rem 0;
+  color: #CC9B54;
+}
+.slider-container{
+  max-width: 1000px;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.image-slider{
+  width: 100%;
+  height: 100%;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider-btns{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.navigation-btn{
+  width: 50px;
+  height: 200px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
+  cursor: pointer;
+}
