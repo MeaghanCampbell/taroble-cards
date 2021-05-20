@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import alien from '../../assets/images/cards/boujie-alien.png';
+import good from '../../assets/images/cards/im-good.png'
+import woke from '../../assets/images/cards/woke-up-like-this.png';
 
 const cards = [
 	{
-		img: "https://images.pexels.com/photos/2843273/pexels-photo-2843273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+		img: alien,
 		id: new Date().getTime().toString(),
-		text: "First Image"
 	},
 	{
-		img: "https://images.pexels.com/photos/3363695/pexels-photo-3363695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+		img: good,
 		id: new Date().getTime().toString(),
-		text: "Sceond Image"
 	},
 	{
-		img: "https://images.pexels.com/photos/6944355/pexels-photo-6944355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+		img: woke,
 		id: new Date().getTime().toString(),
-		text: "Last Image"
 	}
 ]
 const Detail = () => {
@@ -37,18 +37,28 @@ const Detail = () => {
 
 	return (
 		<section>
-			<h2>Past</h2>
+			<p className='detail-header'>PAST</p>
 			<div className="slider-container">
 				<div className="image-slider">
-					<img src={img} alt="" />
+					<img src={img} className='card-img' alt="" />
 				</div>
-				<div className="slider-btns">
-					<button className="prev navigation-btn" onClick={prev}>prev</button>
-					<button className="next navigation-btn" onClick={next}>next</button>
+				<div className="slider-btn-container">
+					<button className="prev slider-btn" onClick={prev}>
+						<svg className='arrow' width="20" height="33" viewBox="0 0 20 33" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" stroke-opacity="0.63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+					<button className="next slider-btn" onClick={next}>
+						<svg className='arrow' width="20" height="33" viewBox="0 0 20 33" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" stroke-opacity="0.63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
 				</div>
 			</div>
 			<div>{text}</div>
-			<button className="btn-description">view description</button>
+			<button>VIEW DESCRIPTION</button>
 		</section>
 	)
 };
