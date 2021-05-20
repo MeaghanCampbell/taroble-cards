@@ -1,0 +1,153 @@
+@font-face {
+  font-family: 'Potra';
+  src: local('Potra'), url(./assets/fonts/potra/Potra.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Armwarmer';
+  src: local('Armwarmer'), url(./assets/fonts/armwarmer/Armwarmer.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Drugs';
+  src: local('Drugs'), url(./assets/fonts/drugs/Drugs.otf) format('truetype');
+}
+
+html, body {
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  /* overflow: hidden; */
+}
+
+main {
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-family: 'Drugs';
+  font-size: 15px;
+  text-align: center;
+  outline: none;
+  color: #CC9B54 !important;
+  border: 1px solid #CC9B54;
+  border-radius: 5px;
+  background-color: transparent;
+  height: 30px;
+  width: 200px;
+}
+
+button:hover {
+  box-shadow: 0 0 10px #CC9B54;
+}
+
+/* Nav Styles */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  height: 35px;
+  padding: 1vw;
+}
+
+.title-nav {
+  font-family: 'Potra';
+  text-decoration: none;
+  color: #CC9B54;
+  font-size: 3.5vh;
+  margin-left: 10px;
+
+}
+
+.signup-login {
+  font-family: 'Drugs';
+  text-decoration: none;
+  color: #CC9B54;
+  font-size: 2vh;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+li:hover {
+  text-shadow: 0 0 3px #CC9B54;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li {
+  padding-right: 10px;
+}
+
+/* Homepage Styles */
+
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.title-home {
+  font-family: 'Potra';
+  color: #CC9B54;
+  text-shadow: 0 0 20px #CC9B54;
+  font-size: 6vh;
+}
+
+/* Sign Up & Login Styles */
+
+.login-signup-form {
+  background-color: black;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.form-header {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  font-family: 'Armwarmer';
+  color: white;
+  margin: 0;
+}
+
+input {
+  font-family: 'Drugs';
+  font-size: 15px;
+  text-align: center;
+  outline: none;
+  color: #CC9B54 !important;
+  border: 1px solid #CC9B54;
+  border-radius: 3px;
+  background-color: transparent;
+  height: 28px;
+  width: 250px;
+  margin: 20px 0 0;
+}
+
+input:hover {
+  box-shadow: 0 0 10px #CC9B54;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+}
+
+::placeholder {
+  color: #CC9B54;
+}
+
+.sign-in-btn {
+  margin-top: 30px;
+}
