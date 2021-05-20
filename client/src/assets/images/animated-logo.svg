@@ -2,7 +2,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113 150" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
 	<style><![CDATA[#eXMR8xpE3QO2 
-	{animation: eXMR8xpE3QO2_s_do 6000ms linear 1 normal forwards}
+	{animation: eXMR8xpE3QO2_s_do 3000ms linear 1 normal forwards}
 	@keyframes eXMR8xpE3QO2_s_do { 0% {stroke-dashoffset: 95.040000} 
 	16.666667% {stroke-dashoffset: 0} 
 	100% {stroke-dashoffset: 0}} 
