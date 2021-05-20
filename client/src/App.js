@@ -9,12 +9,12 @@ import ApolloClient from 'apollo-boost';
 
 
 import Login from "./components/Login";
-import SignUp from "./components/SignUP/SignUp";
-import Nav from "./components/Nav/Nav";
-import Home from "./components/Home/Home";
-import Dashboard from "./components/Dashboard/Dashboard";
-import CardDetail from "./components/CardDetail/Detail";
-import Loading from './components/LoadingScreen/Loading';
+import SignUp from "./components/SignUP";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import Dashboard from "./components/Dashboard";
+import CardDetail from "./components/CardDetail";
+// import Loading from './components/LoadingScreen/Loading';
 
 
 
