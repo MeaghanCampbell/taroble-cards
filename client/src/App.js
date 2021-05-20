@@ -13,7 +13,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import CardDetail from "./components/CardDetail";
-// import Loading from './components/LoadingScreen';
+import LoadingScreen from './components/LoadingScreen';
 
 const client = new ApolloClient({
   request: operation => {
@@ -61,6 +61,7 @@ function App() {
             <Route path="/dashboard" component={Dashboard} />
           </Switch>
         </main>
+        <LoadingScreen/>
       </Router>
 
     </ApolloProvider>
