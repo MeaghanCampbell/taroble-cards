@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/react-hooks';
-import { LOGIN_USER } from '../../utils/mutations';
+import { ADD_USER } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
 const SignUp = () => {
 	const [formState, setFormState] = useState({ email: '', password: '' });
 
-	const [login, { error }] = useMutation(LOGIN_USER);
+	const [addUser, { error }] = useMutation(ADD_USER);
 
 	// update state based on form input changes
 	const handleChange = (event) => {
@@ -25,11 +25,12 @@ const SignUp = () => {
 		event.preventDefault();
 
 		try {
-			const { data } = await login({
+			const { data } = await addUser({
 				variables: { ...formState }
 			});
-			// put token in local storage
-			Auth.login(data.login.token);
+
+			Auth.login(data.addUser.token)
+	
 		} catch (e) {
 			console.error(e);
 		}
@@ -94,7 +95,7 @@ const SignUp = () => {
           </button>
 				</div>
 			</form>
-			{error && <div>Login failed</div>}
+			{error && <div>Sign up failed</div>}
 		</div>
 	)
 }
