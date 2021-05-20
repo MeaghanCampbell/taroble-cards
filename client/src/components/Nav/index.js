@@ -22,7 +22,7 @@ const Nav = () => {
                         <Link to="/dashboard" className="signup-login">DASHBOARD</Link>
                     </li>
                     <li>
-                        <a href="/" onClick={logout}>
+                        <a href="/" onClick={logout} className="signup-login">
                             LOGOUT
                         </a>
                     </li>
