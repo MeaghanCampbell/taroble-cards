@@ -13,7 +13,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import CardDetail from "./components/CardDetail";
-import Loading from './components/LoadingScreen';
+// import Loading from './components/LoadingScreen';
 
 
 
@@ -55,7 +55,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Nav />
-        <main className="main">
+        <main>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/card-detail" component={CardDetail} />
@@ -64,7 +64,7 @@ function App() {
             <Route path="/dashboard" component={Dashboard} />
           </Switch>
         </main>
-        <Loading/>
+        {/* <Loading /> */}
       </Router>
 
     </ApolloProvider>

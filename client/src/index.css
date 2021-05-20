@@ -28,7 +28,7 @@ body{
   overflow-x: hidden;
   position: relative;
 }
-.main{
+main{
   width: 100vw;
   height: 100%;
 }
