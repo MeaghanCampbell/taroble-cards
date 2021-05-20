@@ -72,15 +72,15 @@ const Login = (props) => {
           </div>
         </div>
 
-        <div>
-          <button className='sign-in-btn' type="submit">
-            LOGIN
-          </button>
-        </div>
-      </form>
-      {error && <div>login failed.</div>}
-    </div>
-  )
+				<div>
+					<button className='sign-in-btn' type="submit">
+						LOGIN
+          			</button>
+				</div>
+			</form>
+			{error && <div>login failed.</div>}
+		</div>
+	)
 }
 
 export default Login;
