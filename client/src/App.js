@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 // ApolloProvider, is a special type of React component that we'll use to provide data to all of the other components
 import { ApolloProvider } from '@apollo/react-hooks';
 
@@ -56,7 +55,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Nav />
-        <main>
+        <main className="main">
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/card-detail" component={CardDetail} />
