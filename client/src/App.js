@@ -58,21 +58,11 @@ function App() {
         <Nav />
         <main>
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/card-detail">
-              <CardDetail />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/signup">
-              <SignUp />
-            </Route>
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
+            <Route exact path="/" component={Home} />
+            <Route path="/card-detail" component={CardDetail} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/dashboard" component={Dashboard} />
           </Switch>
         </main>
       </Router>
