@@ -14,6 +14,8 @@ import Dashboard from "./components/Dashboard";
 import CardDetail from "./components/CardDetail";
 // import Loading from './components/LoadingScreen';
 
+import { StoreProvider } from "./utils/GlobalState"
+
 const client = new ApolloClient({
   request: operation => {
     // retrieve the token from localStorage before each request
@@ -50,6 +52,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <StoreProvider>
         <Nav />
         <main>
           <Switch>
@@ -61,8 +64,8 @@ function App() {
           </Switch>
         </main>
         {/* <Loading /> */}
+        </StoreProvider>
       </Router>
-
     </ApolloProvider>
   );
 }
