@@ -1,8 +1,10 @@
 // import models
-const { User } = require('../models');
+const { User, Reading } = require('../models');
 
 // error handling
 const { AuthenticationError } = require('apollo-server-express');
+
+const GraphQLJSON = require('apollo-server-express')
 
 // import the token function from utils
 const { signToken } = require('../utils/auth');
@@ -11,6 +13,9 @@ const { signToken } = require('../utils/auth');
 // the same name of the query or mutation they are resolvers for. We don't have to worry about error handling here
 // because Apollo can infer if something goes wrong and will respond for us.
 const resolvers = {
+
+    JSON: GraphQLJSON,
+
     Query: {
         // get all users
         users: async () => {
@@ -65,21 +70,19 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        // add a friend
-        addFriend: async (parent, { friendId }, context) => {
+        // add reading
+        addReading: async (parent, args, context) => {
             if (context.user) {
-                const updatedUser = await User.findOneAndUpdate(
+                const reading = await Reading.create({ ...args, username: context.user.username })
+
+                await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    // A user can't be friends with the same person twice, though, hence why we're using the $addToSet
-                    // operator instead of $push to prevent duplicate entries.
-                    { $addToSet: { friends: friendId } },
+                    { $push: { readings: reading._id} },
                     { new: true }
-                ).populate('friends');
-
-                return updatedUser;
+                )
+                return reading;
             }
-
-            throw new AuthenticationError('You need to be logged in!');
+            throw new AuthenticationError('You need to be logged in to save your reading!');
         }
     }
 };
