@@ -24,7 +24,7 @@ const Dashboard = () => {
 	}
 	return (
 		<section>
-			<div>
+			<div className='dashboard-container'>
 				<p className="user">welcome, {username}!</p>
 				<div className="card-container">
 					{loggedIn && userData ? (

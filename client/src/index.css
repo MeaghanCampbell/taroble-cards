@@ -27,6 +27,7 @@ body{
   min-height: 100vh;
   min-height: 100ww;
   position: relative;
+  overflow: scroll;
 }
 
 main{
@@ -286,58 +287,63 @@ section {
 
 /* Dashboard page */
 
-.dashboard-center {
-  height: 100vh;
+.dashboard-container {
+  height: 80vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .user {
   font-family: 'Drugs';
-  font-size: 40px;
+  font-size: 30px;
   text-transform: lowercase;
+  text-align: center;
   color: #CC9B54;
   margin: 2rem 0;
+  /* position: fixed; */
 }
 
 .card-container {
   width: 90vw;
-  height: 40vh;
-  background: #000;
-  border-radius: 6px;
+  height: 30vh;
+  background: black;
+  border-radius: 5px;
   -webkit-box-shadow: 0px 0px 10px rgba(255,255,255,0.5); 
   box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
+  /* margin: 2vh 0 0 2vh; */
 }
 
 .card-container-center {
   width: 95%;
   height: 100%;
   margin: 0 auto;
-  /* padding: 1rem 0; */
+  padding: 0.5rem 0;
 }
 
 .reading-date{
   font-family: 'Drugs';
   text-align: center;
   color: #CC9B54;
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  font-size: 0.75rem;
+  margin-top: 5px;
   letter-spacing: 4px;
 }
 
 .cards{
   width: 100%;
-  margin-top: 3rem;
+  height: 90%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  /* width: 50%; */
 }
 
 img{
-  max-width: 300px;
-  height: 400px;
+  height: 80%;
+  margin: 10px;
 }
 
 img:nth-child(2){
