@@ -24,16 +24,12 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_FRIEND = gql`
-  mutation addFriend($id: ID!) {
-    addFriend(friendId: $id) {
+export const ADD_READING = gql`
+  mutation addReading($readingData: JSON) {
+    addReading(readingData: $readingData) {
       _id
-      username
-      friendCount
-      friends {
-        _id
-        username
-      }
+      date
+      readingData
     }
   }
 `;
