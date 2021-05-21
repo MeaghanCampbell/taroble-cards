@@ -1,5 +1,5 @@
 // import models
-const { User } = require('../models');
+const { User, Reading, Card } = require('../models');
 
 // error handling
 const { AuthenticationError } = require('apollo-server-express');
@@ -65,21 +65,19 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        // add a friend
-        addFriend: async (parent, { friendId }, context) => {
+        // add reading
+        addReading: async (parent, args, context) => {
             if (context.user) {
-                const updatedUser = await User.findOneAndUpdate(
+                const reading = await Reading.create({ ...args, username: context.user.username })
+
+                await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    // A user can't be friends with the same person twice, though, hence why we're using the $addToSet
-                    // operator instead of $push to prevent duplicate entries.
-                    { $addToSet: { friends: friendId } },
+                    { $push: { readings: reading._id} },
                     { new: true }
-                ).populate('friends');
-
-                return updatedUser;
+                )
+                return reading;
             }
-
-            throw new AuthenticationError('You need to be logged in!');
+            throw new AuthenticationError('You need to be logged in to save your reading!');
         }
     }
 };

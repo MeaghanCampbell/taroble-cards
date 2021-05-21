@@ -7,8 +7,24 @@ const typeDefs = gql`
         _id: ID
         username: String
         email: String
-        friendCount: Int
-        friends: [User]
+        readings: [Reading]
+    }
+
+    type Reading {
+        _id: ID
+        date: Date
+        past: Card
+        present: Card
+        future: Card
+    }
+
+    type Card {
+        _id: ID
+        image: String
+        name: String
+        pastText: String
+        presentText: String
+        futureText: String
     }
     
     type Auth {
@@ -25,8 +41,8 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addFriend(friendId: ID!): User
-}
+        addReading(past: Card, present: Card, future: Card): Reading
+    }
 `;
 
 // export the typeDefs
