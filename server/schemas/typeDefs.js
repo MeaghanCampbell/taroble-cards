@@ -3,6 +3,8 @@ const { gql } = require('apollo-server-express');
 
 // create our typeDefs
 const typeDefs = gql`
+    scalar JSON
+
     type User {
         _id: ID
         username: String
@@ -12,19 +14,7 @@ const typeDefs = gql`
 
     type Reading {
         _id: ID
-        date: String
-        past: Card
-        present: Card
-        future: Card
-    }
-
-    type Card {
-        _id: ID
-        image: String
-        name: String
-        pastText: String
-        presentText: String
-        futureText: String
+        readingData: JSON
     }
     
     type Auth {
@@ -41,7 +31,7 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addReading(past: String, present: String, future: String): Card
+        addReading(readingData: JSON): Reading
     }
 `;
 

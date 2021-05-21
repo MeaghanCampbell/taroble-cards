@@ -4,6 +4,8 @@ const { User, Reading } = require('../models');
 // error handling
 const { AuthenticationError } = require('apollo-server-express');
 
+const GraphQLJSON = require('apollo-server-express')
+
 // import the token function from utils
 const { signToken } = require('../utils/auth');
 
@@ -11,6 +13,9 @@ const { signToken } = require('../utils/auth');
 // the same name of the query or mutation they are resolvers for. We don't have to worry about error handling here
 // because Apollo can infer if something goes wrong and will respond for us.
 const resolvers = {
+
+    JSON: GraphQLJSON,
+
     Query: {
         // get all users
         users: async () => {

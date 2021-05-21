@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose')
-const cardSchema = require('./Card')
 const dateFormat = require('../utils/dateFormat')
 
 const readingSchema = new Schema(
@@ -9,15 +8,15 @@ const readingSchema = new Schema(
             default: Date.now,
             get: timestamp => dateFormat(timestamp)
         },
-        past: {
-            type: cardSchema
-        },
-        present: {
-            type: cardSchema
-        },
-        future: {
-            type: cardSchema
-        },
+        readingData: {
+            type: Object,
+            required: true
+        }
+    },
+    {
+        toJSON: {
+            getters: true
+        }
     }
 )
 
