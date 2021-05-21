@@ -14,9 +14,6 @@ import Dashboard from "./components/Dashboard";
 import CardDetail from "./components/CardDetail";
 // import Loading from './components/LoadingScreen';
 
-
-
-
 const client = new ApolloClient({
   request: operation => {
     // retrieve the token from localStorage before each request

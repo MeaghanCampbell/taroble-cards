@@ -1,10 +1,3 @@
-/* reset */
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 @font-face {
   font-family: 'Potra';
   src: local('Potra'), url(./assets/fonts/potra/Potra.ttf) format('truetype');
@@ -20,43 +13,48 @@
   src: local('Drugs'), url(./assets/fonts/drugs/Drugs.otf) format('truetype');
 }
 
+/* Reset */
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 /* General Styles */
+
 body{
   min-height: 100vh;
-  overflow-x: hidden;
+  min-height: 100ww;
   position: relative;
 }
+
 main{
   width: 100vw;
-  height: 100%;
-}
-section{
-  width: 100vw;
-  min-height: 100vh;
+  height: 83vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.section-center{
-  width: 1170px;
-  height: 100%;
-  margin: 0 auto;
-}
+
 ul li {
   list-style-type: none;
 }
+
 li:hover {
   text-shadow: 0 0 3px #CC9B54;
 }
+
 ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 li {
   padding-right: 10px;
 }
+
 button {
   font-family: 'Drugs';
   font-size: 15px;
@@ -70,6 +68,7 @@ button {
   width: 200px;
   cursor: pointer;
 }
+
 button:hover {
   box-shadow: 0 0 10px #CC9B54;
 }
@@ -93,35 +92,28 @@ button:hover {
 .t {
   height: 25vh;
 }
-/* End of general styles */
 
 /* Nav Styles */
+
 header {
   width: 100vw;
+  height: 7vh;
   background-color: black;
-  position: absolute;
-  top: 0;
-}
-.header-center{
-  max-width: 1170px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 35px;
-  padding: 1.5rem;
-  margin: 0 auto;
 }
+
 .title-nav {
   font-family: 'Potra';
   text-decoration: none;
   color: #CC9B54;
   font-size: 3.5vh;
   margin-left: 10px;
-
 }
-/* End of Nav Styles */
 
 /* Loading Page Styles */
+
 .load-img-container {
   height: 100vh;
   width: 100vw;
@@ -129,19 +121,18 @@ header {
   justify-content: center;
   align-items: center;
 }
-/* End of Loading Page Styles */
 
 .t {
   height: 25vh;
 }
 
-
 /* Homepage Styles */
-.home-section{
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+
+.home-section {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 .title-home {
@@ -155,10 +146,9 @@ header {
   color: #CC9B54;
   text-decoration: none;
 }
-/* End of Homepage Styles */
-
 
 /* Sign Up & Login Styles */
+
 .form-header {
   font-size: 20px;
   letter-spacing: 0.1em;
@@ -166,6 +156,7 @@ header {
   color: white;
   margin: 0;
 }
+
 .login-signup-form {
   background-color: black;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
@@ -173,12 +164,14 @@ header {
   text-align: center;
   border-radius: 5px;
 }
+
 .signup-login {
   font-family: 'Drugs';
   text-decoration: none;
   color: #CC9B54;
   font-size: 2vh;
 }
+
 input {
   font-family: 'Drugs';
   font-size: 15px;
@@ -212,8 +205,8 @@ input:-webkit-autofill {
 /* Card Detail Styles */
 
 section {
-  /* width: 100vw;
-  height: 100vh; */
+  width: 100vw;
+  height: 83vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -227,7 +220,7 @@ section {
   letter-spacing: 0.25em;
   margin: 0;
   color: #cc9c549a;
-  padding-left: 0.25em;
+  padding: 5vh 0 0 0.25em;
 }
 
 .slider-container {
@@ -235,7 +228,6 @@ section {
   height: 65vh;
   position: relative;
   overflow: hidden;
-  margin-bottom: 2rem;
 }
 
 .image-slider {
@@ -291,42 +283,49 @@ section {
 .arrow {
   height: 3vh;
 }
-/* End of Sign Up & Login Styles */
 
 /* Dashboard page */
-.dashboard-center{
-  height: 100%;
+
+.dashboard-center {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.user{
-  font-size: 4rem;
-  text-transform: capitalize;
+
+.user {
+  font-family: 'Drugs';
+  font-size: 40px;
+  text-transform: lowercase;
   color: #CC9B54;
   margin: 2rem 0;
 }
-.card-container{
-  width: 100%;
-  height: 600px;
+
+.card-container {
+  width: 90vw;
+  height: 40vh;
   background: #000;
   border-radius: 6px;
-  -webkit-box-shadow: 1px 3px 15px 3px rgba(255,255,255,0.73); 
-  box-shadow: 1px 3px 15px 3px rgba(255,255,255,0.73);
+  -webkit-box-shadow: 0px 0px 10px rgba(255,255,255,0.5); 
+  box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
 }
-.card-container-center{
+
+.card-container-center {
   width: 95%;
   height: 100%;
   margin: 0 auto;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
 }
+
 .reading-date{
+  font-family: 'Drugs';
   text-align: center;
   color: #CC9B54;
   font-size: 1.2rem;
   margin-top: 1rem;
   letter-spacing: 4px;
 }
+
 .cards{
   width: 100%;
   margin-top: 3rem;
@@ -335,10 +334,12 @@ section {
   justify-content: center;
   align-items: center;
 }
+
 img{
   max-width: 300px;
   height: 400px;
 }
+
 img:nth-child(2){
   margin: 0 10px;
 }
