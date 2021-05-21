@@ -12,7 +12,7 @@ const typeDefs = gql`
 
     type Reading {
         _id: ID
-        date: Date
+        date: String
         past: Card
         present: Card
         future: Card
@@ -41,7 +41,7 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addReading(past: Card, present: Card, future: Card): Reading
+        addReading(pastText: String, presentText: String, futureText: String): Card
     }
 `;
 

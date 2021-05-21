@@ -1,5 +1,5 @@
 // import models
-const { User, Reading, Card } = require('../models');
+const { User, Reading } = require('../models');
 
 // error handling
 const { AuthenticationError } = require('apollo-server-express');
