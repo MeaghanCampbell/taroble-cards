@@ -14,6 +14,7 @@ const typeDefs = gql`
 
     type Reading {
         _id: ID
+        date: String
         readingData: JSON
     }
     
