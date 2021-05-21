@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import arrow from '../../assets/images/arrow-right.svg'
+import arrow from '../../assets/images/arrow-right.svg'
 import alien from '../../assets/images/cards/boujie-alien.png';
 import good from '../../assets/images/cards/im-good.png'
 import woke from '../../assets/images/cards/woke-up-like-this.png';
@@ -45,17 +45,10 @@ const Detail = () => {
 				</div>
 				<div className="slider-btn-container">
 					<button className="prev slider-btn" onClick={prev}>
-						<svg className='arrow' width="20" height="33" viewBox="0 0 20 33" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" strokeOpacity="0.63" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-						</svg>
-						{/* {arrow} */}
+					<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
 					</button>
 					<button className="next slider-btn" onClick={next}>
-						<svg className='arrow' width="20" height="33" viewBox="0 0 20 33" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" strokeOpacity="0.63" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-						</svg>
+					<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
 					</button>
 				</div>
 			</div>

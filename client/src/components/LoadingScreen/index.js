@@ -1,6 +1,6 @@
 import React from 'react';
 // import anime from 'animejs';
-import svg from '../../assets/images/animated-logo.svg'
+import animatedT from '../../assets/images/animated-logo.svg'
 
 const Loading = (props) => {
   // anime({
@@ -16,7 +16,7 @@ const Loading = (props) => {
   return (
     <div>
       <div className="load-img-container">
-      <object className='t' type="image/svg+xml" data={svg}>svg-animation</object>
+      <object className='t' type="image/svg+xml" data={animatedT}>svg-animation</object>
       </div>
     </div>
   )
