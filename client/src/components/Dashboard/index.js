@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_ME_BASIC } from '../../utils/queries';
+import { QUERY_ME } from '../../utils/queries';
 import moment from 'moment';
 import Card1 from '../../assets/images/cards/boujie-alien.png';
 import Loading from '../LoadingScreen/';
 
 const Dashboard = () => {
 	const [isLoading, setIsLoading] = useState(true);
-	const { data: userData } = useQuery(QUERY_ME_BASIC);
+	const { data: userData } = useQuery(QUERY_ME);
+	console.log(userData.me.readings[0].date)
 	const username = Auth.getProfile().data.username;
 	const loggedIn = Auth.loggedIn();
 	const date = moment().format('M/D/YY');
@@ -29,11 +30,11 @@ const Dashboard = () => {
 				<div className="card-container">
 					{loggedIn && userData ? (
 						<div className="card-container-center">
-							<p className="reading-date">{date}</p>
+							<p className="reading-date">{userData.me.readings[0].date}</p>
 							<div className="cards">
-								<img className='dash-card-1' src={Card1} alt="card1" />
-								<img className='dash-card-2' src={Card1} alt="card1" />
-								<img className='dash-card-3' src={Card1} alt="card1" />
+								<img className='dash-card-1' src={require(`../../assets/images/cards/${userData.me.readings[0].readingData.past.image}`).default} alt="card1" />
+								<img className='dash-card-2' src={require(`../../assets/images/cards/${userData.me.readings[0].readingData.present.image}`).default} alt="card1" />
+								<img className='dash-card-3' src={require(`../../assets/images/cards/${userData.me.readings[0].readingData.future.image}`).default} alt="card1" />
 							</div>
 						</div>
 					) : null}
