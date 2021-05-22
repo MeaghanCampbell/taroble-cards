@@ -5,9 +5,9 @@ class DonTTakeTheBait extends Card {
         super();
         this.name = "Don't Take the Bait";
         this.image = 'dont-take-bait.png';
-        this.pastText = 'past placeholder';
-        this.presentText = 'present placeholder';
-        this.futureText = 'future placeholder';
+        this.pastText = "Don't Take the Bait 'past placeholder'";
+        this.presentText = "Don't Take the Bait 'present placeholder'";
+        this.futureText = "Don't Take the Bait 'future placeholder'";
     }
 }
 

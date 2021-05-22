@@ -5,9 +5,9 @@ class UselessGarbage extends Card {
         super();
         this.name = "Useless Garbage";
         this.image = 'useless-garbage.png';
-        this.pastText = 'past placeholder';
-        this.presentText = 'present placeholder';
-        this.futureText = 'future placeholder';
+        this.pastText = "Useless Garbage 'past placeholder'";
+        this.presentText = "Useless Garbage 'present placeholder'";
+        this.futureText = "Useless Garbage 'future placeholder'";
     }
 }
 

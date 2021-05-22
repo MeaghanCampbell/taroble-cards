@@ -5,9 +5,9 @@ class IMGood extends Card {
         super();
         this.name = "I'm Good";
         this.image = 'im-good.png';
-        this.pastText = 'past placeholder';
-        this.presentText = 'present placeholder';
-        this.futureText = 'future placeholder';
+        this.pastText = "I'm Good 'past placeholder'";
+        this.presentText = "I'm Good 'present placeholder'";
+        this.futureText = "I'm Good 'future placeholder'";
     }
 }
 

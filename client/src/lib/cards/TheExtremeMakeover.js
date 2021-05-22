@@ -5,9 +5,9 @@ class TheExtremeMakeover extends Card {
         super();
         this.name = "The Extreme Makeover";
         this.image = 'extreme-makeover.png';
-        this.pastText = 'past placeholder';
-        this.presentText = 'present placeholder';
-        this.futureText = 'future placeholder';
+        this.pastText = 'They used to call you "ugly duckling". And for good reason, holy shit!';
+        this.presentText = "You've been thinking about turning things around for a while. Time to do it, you lazy sod.";
+        this.futureText = "Yes, I can promise you even the cops won't be able to tell.";
     }
 }
 

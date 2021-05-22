@@ -5,9 +5,9 @@ class IWokeUpLikeThis extends Card {
         super();
         this.name = "I Woke Up Like This";
         this.image = 'woke-up-like-this.png';
-        this.pastText = 'past placeholder';
-        this.presentText = 'present placeholder';
-        this.futureText = 'future placeholder';
+        this.pastText = "I Woke Up Like This 'past placeholder'";
+        this.presentText = "I Woke Up Like This 'present placeholder'";
+        this.futureText = "I Woke Up Like This 'future placeholder'";
     }
 }
 

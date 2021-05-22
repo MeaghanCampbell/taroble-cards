@@ -5,9 +5,9 @@ class DonTWakeTheDragon extends Card {
         super();
         this.name = "Don't Wake the Dragon";
         this.image = 'wake-dragon.png';
-        this.pastText = 'past placeholder';
-        this.presentText = 'present placeholder';
-        this.futureText = 'future placeholder';
+        this.pastText = "Don't Wake the Dragon 'past placeholder'";
+        this.presentText = "Don't Wake the Dragon 'present placeholder'";
+        this.futureText = "Don't Wake the Dragon 'future placeholder'";
     }
 }
 

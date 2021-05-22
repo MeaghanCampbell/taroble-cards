@@ -5,9 +5,9 @@ class YouShallNotPass extends Card {
         super();
         this.name = "You Shall Not Pass";
         this.image = 'shall-not-pass.png';
-        this.pastText = 'past placeholder';
-        this.presentText = 'present placeholder';
-        this.futureText = 'future placeholder';
+        this.pastText = "You Shall Not Pass 'past placeholder'";
+        this.presentText = "You Shall Not Pass 'present placeholder'";
+        this.futureText = "You Shall Not Pass 'future placeholder'";
     }
 }
 
