@@ -54,6 +54,7 @@ const Detail = () => {
 			</div>
 			<div>{text}</div>
 			<button>VIEW DESCRIPTION</button>
+			<button>SAVE READING</button>
 		</section>
 	)
 };
