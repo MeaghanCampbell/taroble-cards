@@ -68,6 +68,7 @@ button {
   height: 30px;
   width: 200px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 button:hover {
@@ -139,7 +140,7 @@ align-items: center;
 .title-home {
   font-family: 'Potra';
   color: #CC9B54;
-  text-shadow: 0 0 20px #CC9B54;
+  text-shadow: 0 0 10px #CC9B54;
   font-size: 6vh;
   margin-bottom: 2rem;
 }
