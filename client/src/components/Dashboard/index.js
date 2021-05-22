@@ -2,17 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_ME } from '../../utils/queries';
-import moment from 'moment';
-import Card1 from '../../assets/images/cards/boujie-alien.png';
 import Loading from '../LoadingScreen/';
 
 const Dashboard = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const { data: userData } = useQuery(QUERY_ME);
-	console.log(userData.me.readings[0].date)
 	const username = Auth.getProfile().data.username;
 	const loggedIn = Auth.loggedIn();
-	const date = moment().format('M/D/YY');
 
 	useEffect(() => {
 		if (username) {
@@ -23,6 +19,7 @@ const Dashboard = () => {
 	if (isLoading) {
 		return <Loading />
 	}
+
 	return (
 		<section>
 			<div className='dashboard-container'>
