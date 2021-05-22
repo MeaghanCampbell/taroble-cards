@@ -1,11 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Reading from '../../lib/Reading'
+import { CURRENT_READING } from '../../utils/actions';
+import { useStoreContext } from "../../utils/GlobalState";
 
 const Home = () => {
+	const [state, dispatch] = useStoreContext();
+	const { currentReading } = state;
+
 	const getReading = () => {
 		const reading = new Reading;
-		reading.generateReading()
+		
+		dispatch({
+			type: CURRENT_READING,
+			currentReading: reading.generateReading()
+		})
 	}
 
 	return (

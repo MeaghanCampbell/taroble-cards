@@ -4,7 +4,7 @@ class HangInThere extends Card {
     constructor() {
         super();
         this.name = "Hang in There";
-        this.image = 'link placeholder';
+        this.image = 'hang-in-there.png';
         this.pastText = 'past placeholder';
         this.presentText = 'present placeholder';
         this.futureText = 'future placeholder';

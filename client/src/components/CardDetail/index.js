@@ -3,6 +3,7 @@ import arrow from '../../assets/images/arrow-right.svg'
 import alien from '../../assets/images/cards/boujie-alien.png';
 import good from '../../assets/images/cards/im-good.png'
 import woke from '../../assets/images/cards/woke-up-like-this.png';
+import { useStoreContext } from "../../utils/GlobalState";
 
 const cards = [
 	{
@@ -19,6 +20,9 @@ const cards = [
 	}
 ]
 const Detail = () => {
+	const [state, dispatch] = useStoreContext();
+	const { currentReading } = state;
+	console.log('currentReading: '+ currentReading)
 	// create a state to access image index
 	const [imageIndex, setImageIndex] = useState(0);
 	const { img, text } = cards[imageIndex];
@@ -41,7 +45,7 @@ const Detail = () => {
 			<p className='detail-header'>PAST</p>
 			<div className="slider-container">
 				<div className="image-slider">
-					<img src={img} className='card-img' alt="" />
+					<img src={require(`../../assets/images/cards/${currentReading.future.image}`).default} className='card-img' alt={currentReading.future.name} />
 				</div>
 				<div className="slider-btn-container">
 					<button className="prev slider-btn" onClick={prev}>
