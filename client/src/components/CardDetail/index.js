@@ -22,7 +22,7 @@ const cards = [
 const Detail = () => {
 	const [state, dispatch] = useStoreContext();
 	const { currentReading } = state;
-	console.log('future image data: '+ currentReading.future.image)
+	console.log('currentReading: '+ currentReading)
 	// create a state to access image index
 	const [imageIndex, setImageIndex] = useState(0);
 	const { img, text } = cards[imageIndex];
