@@ -40,7 +40,7 @@ class Reading {
         this.present = deck[presentCard]
         this.future = deck[futureCard]
 
-        console.log(this)
+        return this
     }
 };
 

@@ -4,7 +4,7 @@ class TheExtremeMakeover extends Card {
     constructor() {
         super();
         this.name = "The Extreme Makeover";
-        this.image = 'link placeholder';
+        this.image = 'extreme-makeover.png';
         this.pastText = 'past placeholder';
         this.presentText = 'present placeholder';
         this.futureText = 'future placeholder';
