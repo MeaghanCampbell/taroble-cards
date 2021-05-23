@@ -5,14 +5,18 @@ import { CURRENT_READING } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
 const Home = () => {
+	// import the global state and dispatch
 	const [state, dispatch] = useStoreContext();
+	// extract currentReading from the state object
 	const { currentReading } = state;
 
+	// generate a new reading and save it to the currentReading in global state
 	const getReading = () => {
 		const reading = new Reading;
 		
 		dispatch({
 			type: CURRENT_READING,
+			// generate a new reading and save it to the currentReading in global state
 			currentReading: reading.generateReading()
 		})
 	}

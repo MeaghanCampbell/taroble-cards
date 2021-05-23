@@ -3,7 +3,10 @@ import arrow from '../../assets/images/arrow-right.svg'
 import alien from '../../assets/images/cards/boujie-alien.png';
 import good from '../../assets/images/cards/im-good.png'
 import woke from '../../assets/images/cards/woke-up-like-this.png';
+
 import { useStoreContext } from "../../utils/GlobalState";
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_READING } from '../../utils/mutations';
 
 const cards = [
 	{
@@ -20,9 +23,28 @@ const cards = [
 	}
 ]
 const Detail = () => {
+	// import the global state and dispatch
 	const [state, dispatch] = useStoreContext();
+	// extract currentReading from the state object
 	const { currentReading } = state;
+	// console log the currentReading data
 	console.log(currentReading)
+	// 
+	const [addReading, { error }] = useMutation(ADD_READING);
+
+	// save the current reading
+	const saveReading = async event => {
+		try {
+            // add reading to users readings array
+            await addReading({
+                variables: { readingData:currentReading }
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+
 	// create a state to access image index
 	const [imageIndex, setImageIndex] = useState(0);
 	const { img, text } = cards[imageIndex];
@@ -58,7 +80,7 @@ const Detail = () => {
 			</div>
 			<div>{text}</div>
 			<button>VIEW DESCRIPTION</button>
-			<button>SAVE READING</button>
+			<button onClick={saveReading}>SAVE READING</button>
 		</section>
 	)
 };
