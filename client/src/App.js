@@ -13,6 +13,7 @@ import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import CardDetail from "./components/CardDetail";
 // import Loading from './components/LoadingScreen';
+// import ReadingMessages from './components/ReadingMessages';
 
 import { StoreProvider } from "./utils/GlobalState"
 
@@ -64,6 +65,7 @@ function App() {
           </Switch>
         </main>
         {/* <Loading /> */}
+        {/* <ReadingMessages /> */}
         </StoreProvider>
       </Router>
     </ApolloProvider>
