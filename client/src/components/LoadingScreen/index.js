@@ -1,18 +1,7 @@
 import React from 'react';
-// import anime from 'animejs';
-import animatedT from '../../assets/images/animated-logo.svg'
+import animatedT from '../../assets/images/figma-t-undraw.svg'
 
-const Loading = (props) => {
-  // anime({
-  //   targets: '#T path',
-  //   strokeDashoffset: [anime.setDashoffset, 0],
-  //   easing: 'easeInOutSine',
-  //   duration: 2000,
-  //   delay: function (el, i) { return i * 500 },
-  //   direction: 'alternate',
-  //   loop: true
-  // });
-
+const Loading = () => {
   return (
     <div>
       <div className="load-img-container">
