@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_ME } from '../../utils/queries';
-import Loading from '../LoadingScreen/';
+import Loader from '../Loader/';
 
 const Dashboard = () => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +17,7 @@ const Dashboard = () => {
 	}, [username]);
 
 	if (isLoading) {
-		return <Loading />
+		return <Loader />
 	}
 
 	return (

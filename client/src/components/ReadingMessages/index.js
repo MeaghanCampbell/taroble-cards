@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useSpring, animated } from 'react-spring'
+import { useSpring, animated } from 'react-spring';
+import { CURRENT_PAGE } from '../../utils/actions';
+import { useStoreContext } from "../../utils/GlobalState";
 
 const messages = [
     `Searching your browser history…`,
@@ -20,6 +22,11 @@ const messages = [
 ]
 
 const ReadingMessages = () => {
+    // import the global state and dispatch
+    const [state, dispatch] = useStoreContext();
+    // extract currentPage from the state object
+    const { currentPage } = state;
+    
     const { Random } = require("random-js");
     const random = new Random
     let messageOne = random.die(messages.length-1)
@@ -48,7 +55,11 @@ const ReadingMessages = () => {
         setTimeout(function(){ setMessage(messages[messageTwo]) }, 3000);
         setTimeout(function(){ setMessage(messages[messageThree]) }, 6000);
         // load detail page
-        setTimeout(function(){ setMessage('LOAD DETAIL PAGE')  }, 9000);
+        setTimeout(function(){ dispatch({
+          type: CURRENT_PAGE,
+          // generate a new reading and save it to the currentReading in global state
+          currentPage: 'detail'
+        }) }, 9000);
     }, [])
     
 

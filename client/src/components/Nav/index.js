@@ -1,29 +1,79 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
+import { CURRENT_PAGE, PREVIOUS_PAGE } from '../../utils/actions';
+import { useStoreContext } from "../../utils/GlobalState";
 
 const Nav = () => {
+	// import the global state and dispatch
+    const [state, dispatch] = useStoreContext();
+    // extract currentPage from the state object
+    const { currentPage } = state;
 
 	const logout = event => {
 		event.preventDefault();
 		Auth.logout();
 	};
 
+	const login = event => {
+		event.preventDefault();
+		dispatch({
+			type: PREVIOUS_PAGE,
+			previousPage: currentPage
+		})
+
+		dispatch({
+			type: CURRENT_PAGE,
+			currentPage: 'login'
+		})
+	}
+
+	const dashboard = event => {
+		event.preventDefault();
+		dispatch({
+			type: CURRENT_PAGE,
+			// generate a new reading and save it to the currentReading in global state
+			currentPage: 'dashboard'
+		  })
+	}
+
+	const signUp = event => {
+		event.preventDefault();
+		dispatch({
+			type: PREVIOUS_PAGE,
+			previousPage: currentPage
+		})
+		dispatch({
+			type: CURRENT_PAGE,
+			// generate a new reading and save it to the currentReading in global state
+			currentPage: 'signUp'
+		  })
+	}
+
+	const home = event => {
+		event.preventDefault();
+		dispatch({
+			type: CURRENT_PAGE,
+			// generate a new reading and save it to the currentReading in global state
+			currentPage: 'home'
+		  })
+	}
+
 	return (
 		<header>
 				<h3>
-					<Link to="/" className='title-nav'>Taroble Cards</Link>
+				<p onClick={home} className='title-nav'>Taroble Cards</p>
 				</h3>
 				{Auth.loggedIn() ? (
 					<>
 						<ul>
 							<li>
-								<Link to="/dashboard" className="signup-login">DASHBOARD</Link>
+								<p onClick={dashboard} className="signup-login">DASHBOARD</p>
 							</li>
 							<li>
-								<a href="/" onClick={logout} className="signup-login">
+								<Link to="/" onClick={logout} className="signup-login">
 									LOGOUT
-                </a>
+                				</Link>
 							</li>
 						</ul>
 					</>
@@ -31,10 +81,10 @@ const Nav = () => {
 						<>
 							<ul>
 								<li>
-									<Link to="/login" className='signup-login'>LOGIN</Link>
+									<p onClick={login} className='signup-login'>LOGIN</p>
 								</li>
 								<li>
-									<Link to="/signup" className='signup-login'>SIGNUP</Link>
+									<p onClick={signUp} className='signup-login'>SIGNUP</p>
 								</li>
 							</ul>
 						</>

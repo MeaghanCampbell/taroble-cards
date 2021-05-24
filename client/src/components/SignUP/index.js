@@ -3,9 +3,17 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../../utils/mutations';
 
+import { CURRENT_PAGE, PREVIOUS_PAGE } from '../../utils/actions';
+import { useStoreContext } from "../../utils/GlobalState";
+
 import Auth from '../../utils/auth';
 
 const SignUp = () => {
+	// import the global state and dispatch
+	const [state, dispatch] = useStoreContext();
+	// extract currentReading from the state object
+	const { currentPage, previousPage } = state;
+	
 	const [formState, setFormState] = useState({ email: '', password: '' });
 
 	const [addUser, { error }] = useMutation(ADD_USER);
@@ -30,6 +38,11 @@ const SignUp = () => {
 			});
 
 			Auth.login(data.addUser.token)
+			dispatch({
+				type: CURRENT_PAGE,
+				// generate a new reading and save it to the currentReading in global state
+				currentPage: previousPage
+			})
 	
 		} catch (e) {
 			console.error(e);

@@ -7,6 +7,7 @@ import woke from '../../assets/images/cards/woke-up-like-this.png';
 import { useStoreContext } from "../../utils/GlobalState";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_READING } from '../../utils/mutations';
+import { CURRENT_PAGE } from '../../utils/actions'
 
 const cards = [
 	{
@@ -42,6 +43,11 @@ const Detail = () => {
         } catch (e) {
             console.error(e);
         }
+		dispatch({
+			type: CURRENT_PAGE,
+			// generate a new reading and save it to the currentReading in global state
+			currentPage: 'dashboard'
+		})
     };
 
 
