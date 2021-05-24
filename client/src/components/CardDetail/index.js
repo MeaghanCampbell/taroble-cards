@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './index.css';
 
 
-
 const imageSamples = [
     {
         img: "https://images.pexels.com/photos/2843273/pexels-photo-2843273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
