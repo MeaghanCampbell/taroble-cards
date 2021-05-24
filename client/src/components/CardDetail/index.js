@@ -1,53 +1,60 @@
 import React, { useState } from 'react';
 import arrow from '../../assets/images/arrow-right.svg'
-import alien from '../../assets/images/cards/boujie-alien.png';
-import good from '../../assets/images/cards/im-good.png'
-import woke from '../../assets/images/cards/woke-up-like-this.png';
-
 import { useStoreContext } from "../../utils/GlobalState";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_READING } from '../../utils/mutations';
 
-const cards = [
-	{
-		img: alien,
-		id: new Date().getTime().toString(),
-	},
-	{
-		img: good,
-		id: new Date().getTime().toString(),
-	},
-	{
-		img: woke,
-		id: new Date().getTime().toString(),
-	}
-]
+
+
 const Detail = () => {
 	// import the global state and dispatch
 	const [state, dispatch] = useStoreContext();
 	// extract currentReading from the state object
 	const { currentReading } = state;
 	// console log the currentReading data
-	console.log(currentReading)
-	// 
+
+
 	const [addReading, { error }] = useMutation(ADD_READING);
 
 	// save the current reading
 	const saveReading = async event => {
 		try {
-            // add reading to users readings array
-            await addReading({
-                variables: { readingData:currentReading }
-            });
-        } catch (e) {
-            console.error(e);
-        }
-    };
+			// add reading to users readings array
+			await addReading({
+				variables: { readingData: currentReading }
+			});
+		} catch (e) {
+			console.error(e);
+		}
+	};
+
+	const cards = [
+		{
+			heading: "past",
+			image: currentReading.past.image,
+			name: currentReading.past.name,
+			text: currentReading.past.pastText,
+		},
+		{
+			heading: "present",
+			image: currentReading.present.image,
+			name: currentReading.present.name,
+			text: currentReading.present.presentText
+		},
+		{
+			heading: "future",
+			image: currentReading.future.image,
+			name: currentReading.future.name,
+			text: currentReading.future.futureText,
+		}
+
+
+	];
 
 
 	// create a state to access image index
-	const [imageIndex, setImageIndex] = useState(0);
-	const { img, text } = cards[imageIndex];
+	const [card, setCardIndex] = useState(0);
+	const { heading, image, name, text } = cards[card];
 
 	// function to check the index of the images
 	const checkIndexNumber = number => {
@@ -58,29 +65,50 @@ const Detail = () => {
 	}
 
 	// increase index by 1
-	const next = () => setImageIndex(index => checkIndexNumber(index + 1));
+	const next = () => setCardIndex(index => checkIndexNumber(index + 1));
 	// subtract index by 1
-	const prev = () => setImageIndex(index => checkIndexNumber(index - 1));
+	const prev = () => setCardIndex(index => checkIndexNumber(index - 1));
 
+
+	const [isFlipped, setIsFlipped] = useState(false);
+	const clickhandler = () => setIsFlipped(!isFlipped);
 	return (
-		<section>
-			<p className='detail-header'>PAST</p>
-			<div className="slider-container">
-				<div className="image-slider">
-					<img src={require(`../../assets/images/cards/${currentReading.future.image}`).default} className='card-img' alt={currentReading.future.name} />
+		<section className="detail-section">
+
+			<h3 className="detail__header">{heading}</h3>
+			<div className="card__slider--container">
+				<div className="card">
+					<div className={isFlipped ? "card__inner is-flipped" : "card__inner"}>
+						<div className="card__face card__face--front">
+							<img src={require(`../../assets/images/cards/${image}`).default} className='card-img' alt={name} />
+						</div>
+						<div className="card__face card__face--back">
+							<div className="card__content">
+								<div className="card__body">
+									<h3 className="card__desc__head">Description</h3>
+									<div className="underline"></div>
+									<div className="card__text">{text}</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div className="slider-btn-container">
-					<button className="prev slider-btn" onClick={prev}>
-					<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
+
+				<div className="card__slider__btn__container">
+					<button className="btn prev" onClick={prev}>
+						<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
 					</button>
-					<button className="next slider-btn" onClick={next}>
-					<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
+					<button className="btn next" onClick={next}>
+						<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
 					</button>
 				</div>
 			</div>
-			<div>{text}</div>
-			<button>VIEW DESCRIPTION</button>
-			<button onClick={saveReading}>SAVE READING</button>
+			<div className="outside__btns">
+				<button onClick={clickhandler}>{isFlipped ? 'view card' : 'view description'}</button>
+				<button onClick={saveReading}>save reading</button>
+			</div>
+
 		</section>
 	)
 };

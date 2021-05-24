@@ -58,7 +58,7 @@ li {
 
 button {
   font-family: 'Drugs';
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   outline: none;
   color: #CC9B54 !important;
@@ -69,6 +69,8 @@ button {
   width: 200px;
   cursor: pointer;
   margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 button:hover {
@@ -202,16 +204,15 @@ input:-webkit-autofill {
 
 /* Card Detail Styles */
 
-section {
+.detail-section {
   width: 100vw;
   height: 83vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
 }
-
-.detail-header {
+.detail__header {
   font-family: 'Drugs';
   font-size: 40px;
   font-weight: 100;
@@ -219,53 +220,106 @@ section {
   margin: 0;
   color: #cc9c549a;
   padding: 5vh 0 0 0.25em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 5rem;
+}
+.card__slider--container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.card{
+    margin: 1rem 0;
+    width: 300px;
+    height: 420px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.slider-container {
-  width: 100vw;
-  height: 65vh;
-  position: relative;
-  overflow: hidden;
+.card__inner{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
 }
 
-.image-slider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+.card__inner.is-flipped{
+    transform: rotateY(180deg);
 }
 
-.card-img {
-  object-fit: cover;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  height: 90%;
-  background-color: black;
-  padding: 3px;
+.card__face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
 }
 
-.slider-btn-container {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.card__face--front img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.slider-btn {
+.card__face--back{
+    background: #fff;
+    color: #CC9B54;
+    transform: rotateY(180deg);
+   
+}
+.card__desc__head{
+  font-family: 'Armwarmer';
+  color: rgba(24, 23, 23, 0.863);
+  font-weight: normal;
+}
+.underline{
+  width: 80%;
+  height: 2px;
+  background-color: rgba(199, 199, 199, 0.418);
+  margin: 0 auto 1rem auto;
+}
+.card__body{
+  font-size: 1.3rem;
+  line-height: 2;
+  letter-spacing: 2px;
+  padding: 1rem;
+  text-align: center;
+  color: rgb(119, 119, 119);
+
+}
+
+.card__slider__btn__container{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
   width: 40px;
   height: 40vh;
-  background-color: black;
   border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .2s;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background-color: black;
 }
-
-.slider-btn:hover {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+.btn:hover{
+ box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
-
 .prev {
   border-radius: 0 3px 3px 0;
 }
@@ -281,6 +335,15 @@ section {
 .arrow {
   height: 3vh;
 }
+.outside__btns{
+    margin-top: 2rem;
+}
+.outside__btns button{
+  margin-right: 12px;
+}
+
+/* End of card details */
+
 
 /* Dashboard page */
 
