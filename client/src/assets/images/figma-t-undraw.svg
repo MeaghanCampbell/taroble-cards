@@ -1,0 +1,28 @@
+<svg id="evcUKpIGXbF1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113 150" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+	<style><![CDATA[#evcUKpIGXbF2 {animation: evcUKpIGXbF2_s_do 3500ms linear 2 alternate forwards}@keyframes evcUKpIGXbF2_s_do { 0% {stroke-dashoffset: 95.040000} 28.571429% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}} #evcUKpIGXbF3 {
+          animation-name: evcUKpIGXbF3_c_o, evcUKpIGXbF3_s_do;
+          animation-duration: 3500ms;
+          animation-fill-mode: forwards;
+          animation-timing-function: linear;
+          animation-direction: alternate;
+          animation-iteration-count: 2;  
+        }@keyframes evcUKpIGXbF3_c_o { 0% {opacity: 0} 8.571429% {opacity: 0} 11.428571% {opacity: 1} 100% {opacity: 1}}@keyframes evcUKpIGXbF3_s_do { 0% {stroke-dashoffset: 158.420000} 8.571429% {stroke-dashoffset: 158.420000} 57.142857% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}} #evcUKpIGXbF4 {animation: evcUKpIGXbF4_s_do 3500ms linear 2 alternate forwards}@keyframes evcUKpIGXbF4_s_do { 0% {stroke-dashoffset: 22.590000} 17.142857% {stroke-dashoffset: 22.590000} 45.714286% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}} #evcUKpIGXbF5 {animation: evcUKpIGXbF5_s_do 3500ms linear 2 alternate forwards}@keyframes evcUKpIGXbF5_s_do { 0% {stroke-dashoffset: 7.970000} 17.142857% {stroke-dashoffset: 7.970000} 45.714286% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}} #evcUKpIGXbF6 {animation: evcUKpIGXbF6_s_do 3500ms linear 2 alternate forwards}@keyframes evcUKpIGXbF6_s_do { 0% {stroke-dashoffset: 32.060000} 25.714286% {stroke-dashoffset: 32.060000} 54.285714% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}} #evcUKpIGXbF7 {animation: evcUKpIGXbF7_s_do 3500ms linear 2 alternate forwards}@keyframes evcUKpIGXbF7_s_do { 0% {stroke-dashoffset: 64.820000} 34.285714% {stroke-dashoffset: 64.820000} 62.857143% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}} #evcUKpIGXbF8 {
+          animation-name: evcUKpIGXbF8_c_o, evcUKpIGXbF8_s_do;
+          animation-duration: 3500ms;
+          animation-fill-mode: forwards;
+          animation-timing-function: linear;
+          animation-direction: alternate;
+          animation-iteration-count: 2;  
+        }@keyframes evcUKpIGXbF8_c_o { 0% {opacity: 0} 42.857143% {opacity: 0} 45.714286% {opacity: 1} 100% {opacity: 1}}@keyframes evcUKpIGXbF8_s_do { 0% {stroke-dashoffset: 60.100000} 42.857143% {stroke-dashoffset: 60.100000} 71.428571% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}} #evcUKpIGXbF9 {animation: evcUKpIGXbF9_s_do 3500ms linear 2 alternate forwards}@keyframes evcUKpIGXbF9_s_do { 0% {stroke-dashoffset: 49.350000} 51.428571% {stroke-dashoffset: 49.350000} 80% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}} #evcUKpIGXbF10 {animation: evcUKpIGXbF10_s_do 3500ms linear 2 alternate forwards}@keyframes evcUKpIGXbF10_s_do { 0% {stroke-dashoffset: 31.430000} 57.142857% {stroke-dashoffset: 31.430000} 85.714286% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}}]]></style>
+	<path id="evcUKpIGXbF2" d="M8.160030,10.160200L103.200000,10.160200" fill="none" stroke="rgb(204,155,84)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dashoffset="95.040000" stroke-dasharray="95.040000"/>
+	<path id="evcUKpIGXbF3" d="M7.540040,25.689900L49,25.689900L49,79.199900L62.810000,79.199900L62.810000,128.840000" opacity="0" fill="none" stroke="rgb(204,155,84)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dashoffset="158.420000" stroke-dasharray="158.420000"/>
+	<path id="evcUKpIGXbF4" d="M62.810100,25.689900L85.400100,25.689900" fill="none" stroke="rgb(204,155,84)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dashoffset="22.590000" stroke-dasharray="22.590000"/>
+	<path id="evcUKpIGXbF5" d="M95.230000,25.689900L103.200000,25.689900" fill="none" stroke="rgb(204,155,84)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dashoffset="7.970000" stroke-dasharray="7.970000"/>
+	<path id="evcUKpIGXbF6" d="M7.530030,39.830100L39.590000,39.830100" fill="none" stroke="rgb(204,155,84)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dashoffset="32.060000" stroke-dasharray="32.060000"/>
+	<path id="evcUKpIGXbF7" d="M102.120000,39.830100L62.810100,39.830100L62.810100,65.340100" fill="none" stroke="rgb(204,155,84)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dashoffset="64.820000" stroke-dasharray="64.820000"/>
+	<path id="evcUKpIGXbF8" d="M101.760000,52.589800L74.100000,52.589800L74.100000,85.029800" opacity="0" fill="none" stroke="rgb(204,155,84)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dashoffset="60.100000" stroke-dasharray="60.100000"/>
+	<path id="evcUKpIGXbF9" d="M49,89.740200L49,139.090000" fill="none" stroke="rgb(204,155,84)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dashoffset="49.350000" stroke-dasharray="49.350000"/>
+	<path id="evcUKpIGXbF10" d="M8.160030,54.250000L39.590000,54.250000" fill="none" stroke="rgb(204,155,84)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dashoffset="31.430000" stroke-dasharray="31.430000"/>
+</svg>

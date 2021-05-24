@@ -54,7 +54,7 @@ const ReadingMessages = () => {
 
   return (
     <div className="load-img-container">
-        <animated.h1 className='title-home' style={props}>{message}</animated.h1>
+        <animated.h1 className='reading-messages' style={props}>{message}</animated.h1>
     </div>
   )
 }
