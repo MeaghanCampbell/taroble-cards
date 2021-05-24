@@ -32,7 +32,6 @@ const Nav = () => {
 		event.preventDefault();
 		dispatch({
 			type: CURRENT_PAGE,
-			// generate a new reading and save it to the currentReading in global state
 			currentPage: 'dashboard'
 		  })
 	}
@@ -45,7 +44,6 @@ const Nav = () => {
 		})
 		dispatch({
 			type: CURRENT_PAGE,
-			// generate a new reading and save it to the currentReading in global state
 			currentPage: 'signUp'
 		  })
 	}
@@ -54,7 +52,6 @@ const Nav = () => {
 		event.preventDefault();
 		dispatch({
 			type: CURRENT_PAGE,
-			// generate a new reading and save it to the currentReading in global state
 			currentPage: 'home'
 		  })
 	}

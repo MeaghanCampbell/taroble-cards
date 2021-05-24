@@ -11,8 +11,8 @@ import Auth from '../../utils/auth';
 const SignUp = () => {
 	// import the global state and dispatch
 	const [state, dispatch] = useStoreContext();
-	// extract currentReading from the state object
-	const { currentPage, previousPage } = state;
+	// extract previousPage from the state object
+	const { previousPage } = state;
 	
 	const [formState, setFormState] = useState({ email: '', password: '' });
 
@@ -40,7 +40,6 @@ const SignUp = () => {
 			Auth.login(data.addUser.token)
 			dispatch({
 				type: CURRENT_PAGE,
-				// generate a new reading and save it to the currentReading in global state
 				currentPage: previousPage
 			})
 	

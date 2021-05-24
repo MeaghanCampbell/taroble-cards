@@ -7,8 +7,6 @@ import { useStoreContext } from "../../utils/GlobalState";
 const Home = () => {
 	// import the global state and dispatch
 	const [state, dispatch] = useStoreContext();
-	// extract currentReading from the state object
-	const { currentReading, currentPage } = state;
 
 	// generate a new reading and save it to the currentReading in global state
 	const getReading = () => {
@@ -22,7 +20,7 @@ const Home = () => {
 
 		dispatch({
 			type: CURRENT_PAGE,
-			// generate a new reading and save it to the currentReading in global state
+			// send user to messages component
 			currentPage: 'messages'
 		})
 	}

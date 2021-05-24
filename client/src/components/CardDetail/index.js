@@ -45,7 +45,7 @@ const Detail = () => {
         }
 		dispatch({
 			type: CURRENT_PAGE,
-			// generate a new reading and save it to the currentReading in global state
+			// send them to the dashboard after saving the reading
 			currentPage: 'dashboard'
 		})
     };

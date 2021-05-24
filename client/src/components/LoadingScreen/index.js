@@ -6,8 +6,6 @@ import { useStoreContext } from "../../utils/GlobalState";
 const Loading = () => {
   // import the global state and dispatch
   const [state, dispatch] = useStoreContext();
-  // extract currentPage from the state object
-  const { currentPage } = state;
 
   useEffect (()=>{
     setTimeout(function(){ dispatch({

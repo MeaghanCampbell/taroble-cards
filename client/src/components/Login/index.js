@@ -11,8 +11,8 @@ import Auth from '../../utils/auth';
 const Login = (props) => {
   // import the global state and dispatch
 	const [state, dispatch] = useStoreContext();
-	// extract currentReading from the state object
-	const { currentPage, previousPage } = state;
+	// extract the previousPage from the state object
+	const { previousPage } = state;
 
   const [formState, setFormState] = useState({ email: '', password: '' });
 
