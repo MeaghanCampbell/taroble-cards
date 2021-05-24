@@ -6,7 +6,6 @@ import { ApolloProvider } from '@apollo/react-hooks';
 //  We'll use the ApolloClient to get that data when we're ready to use it.
 import ApolloClient from 'apollo-boost';
 
-
 import Login from "./components/Login";
 import SignUp from "./components/SignUP";
 import Nav from "./components/Nav";
@@ -14,9 +13,9 @@ import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import CardDetail from "./components/CardDetail";
 // import Loading from './components/LoadingScreen';
+// import ReadingMessages from './components/ReadingMessages';
 
-
-
+import { StoreProvider } from "./utils/GlobalState"
 
 const client = new ApolloClient({
   request: operation => {
@@ -54,6 +53,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <StoreProvider>
         <Nav />
         <main>
           <Switch>
@@ -65,8 +65,9 @@ function App() {
           </Switch>
         </main>
         {/* <Loading /> */}
+        {/* <ReadingMessages /> */}
+        </StoreProvider>
       </Router>
-
     </ApolloProvider>
   );
 }
