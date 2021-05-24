@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import arrow from '../../assets/images/arrow-right.svg'
-// import alien from '../../assets/images/cards/boujie-alien.png';
-// import good from '../../assets/images/cards/im-good.png'
-// import woke from '../../assets/images/cards/woke-up-like-this.png';
-
 import { useStoreContext } from "../../utils/GlobalState";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_READING } from '../../utils/mutations';
+
 
 
 const Detail = () => {
@@ -36,30 +33,28 @@ const Detail = () => {
 			heading: "past",
 			image: currentReading.past.image,
 			name: currentReading.past.name,
-			pastText: currentReading.past.pastText,
+			text: currentReading.past.pastText,
 		},
 		{
 			heading: "present",
 			image: currentReading.present.image,
 			name: currentReading.present.name,
-			presentText: currentReading.present.presentText
+			text: currentReading.present.presentText
 		},
 		{
 			heading: "future",
-			futureText: currentReading.future.futureText,
 			image: currentReading.future.image,
 			name: currentReading.future.name,
-
+			text: currentReading.future.futureText,
 		}
 
 
 	];
-	console.log('========cards array==========')
-	console.log(cards)
+
 
 	// create a state to access image index
 	const [card, setCardIndex] = useState(0);
-	const { heading, futureText, image, name, pastText, presentText } = cards[card];
+	const { heading, image, name, text } = cards[card];
 
 	// function to check the index of the images
 	const checkIndexNumber = number => {
@@ -75,29 +70,44 @@ const Detail = () => {
 	const prev = () => setCardIndex(index => checkIndexNumber(index - 1));
 
 
+	const [isFlipped, setIsFlipped] = useState(false);
+	const clickhandler = () => setIsFlipped(!isFlipped);
 	return (
-		<section>
+		<section className="detail-section">
 
-			<p className='detail-header'>{heading}</p>
-			<div className="slider-container">
-				<div className="image-slider">
-					<img src={require(`../../assets/images/cards/${image}`).default} className='card-img' alt={name} />
+			<h3 className="detail__header">{heading}</h3>
+			<div className="card__slider--container">
+				<div className="card">
+					<div className={isFlipped ? "card__inner is-flipped" : "card__inner"}>
+						<div className="card__face card__face--front">
+							<img src={require(`../../assets/images/cards/${image}`).default} className='card-img' alt={name} />
+						</div>
+						<div className="card__face card__face--back">
+							<div className="card__content">
+								<div className="card__body">
+									<h3 className="card__desc__head">Description</h3>
+									<div className="underline"></div>
+									<div className="card__text">{text}</div>
 
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div className="slider-btn-container">
-					<button className="prev slider-btn" onClick={prev}>
+
+				<div className="card__slider__btn__container">
+					<button className="btn prev" onClick={prev}>
 						<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
 					</button>
-					<button className="next slider-btn" onClick={next}>
+					<button className="btn next" onClick={next}>
 						<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
 					</button>
 				</div>
 			</div>
-			<div>{futureText}</div>
-			<div>{pastText}</div>
-			<div>{presentText}</div>
-			<button>VIEW DESCRIPTION</button>
-			<button onClick={saveReading}>SAVE READING</button>
+			<div className="outside__btns">
+				<button onClick={clickhandler}>{isFlipped ? 'view card' : 'view description'}</button>
+				<button onClick={saveReading}>save reading</button>
+			</div>
 
 		</section>
 	)
