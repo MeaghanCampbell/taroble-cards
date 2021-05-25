@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { CURRENT_PAGE } from '../../utils/actions';
+import { CURRENT_PAGE, PREVIOUS_PAGE } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
 const messages = [
@@ -57,7 +57,12 @@ const ReadingMessages = () => {
           type: CURRENT_PAGE,
           // generate a new reading and save it to the currentReading in global state
           currentPage: 'detail'
-        }) }, 9000);
+        }) 
+        dispatch({
+          type: PREVIOUS_PAGE,
+          // generate a new reading and save it to the currentReading in global state
+          currentPage: 'detail'
+        })}, 9000);
     }, [])
     
 
