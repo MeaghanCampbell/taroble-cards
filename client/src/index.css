@@ -27,7 +27,7 @@ body{
   min-height: 100vh;
   min-height: 100ww;
   position: relative;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 main{
@@ -210,9 +210,10 @@ input:-webkit-autofill {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-.detail__header {
+
+.detail-header {
   font-family: 'Drugs';
   font-size: 40px;
   font-weight: 100;
@@ -222,24 +223,29 @@ input:-webkit-autofill {
   padding: 5vh 0 0 0.25em;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 }
-.card__slider--container{
-    width: 100%;
-    height: 100%;
+
+.card-slider-container{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 100vw;
+    height: 83hv;
     position: relative;
 }
+
 .card{
     margin: 1rem 0;
     width: 300px;
-    height: 420px;
+    height: 450px;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.card__inner{
+.card-inner{
     width: 100%;
     height: 100%;
     transition: transform 1s;
@@ -248,11 +254,11 @@ input:-webkit-autofill {
     position: relative;
 }
 
-.card__inner.is-flipped{
+.card-inner.is-flipped{
     transform: rotateY(180deg);
 }
 
-.card__face{
+.card-face{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -260,43 +266,66 @@ input:-webkit-autofill {
     -webkit-backface-visibility: hidden;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.555);
+    background-color: black;
 }
 
-.card__face--front img{
-    width: 100%;
+/* .card-face-front img{
+    width: 80%;
     height: 100%;
     object-fit: cover;
-}
+} */
 
-.card__face--back{
-    background: #fff;
+.card-face-back{
+    background: black;
     color: #CC9B54;
     transform: rotateY(180deg);
-   
 }
-.card__desc__head{
+
+.card-desc-head{
   font-family: 'Armwarmer';
   color: rgba(24, 23, 23, 0.863);
-  font-weight: normal;
-}
-.underline{
-  width: 80%;
-  height: 2px;
-  background-color: rgba(199, 199, 199, 0.418);
-  margin: 0 auto 1rem auto;
-}
-.card__body{
   font-size: 1.3rem;
+  font-weight: normal;
+  border-bottom: 1px solid rgb(199, 199, 199);
+  padding: 0.25em 0;
+  /* width: 80%; */
+  text-align: center;
+}
+
+.card-content {
+  height: 98%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: black;
+  padding: 10px;
+}
+
+.card-body{
+  height: 100%;
+  width: 100%;
+  background-image: url('./assets/images/card-border.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.desc {
+  height: 80%;
+  width: 80%;
+  background-color: white;
+  font-size: 1rem;
   line-height: 2;
   letter-spacing: 2px;
-  padding: 1rem;
+  margin: 1rem;
   text-align: center;
+  border-radius: 10px;
   color: rgb(119, 119, 119);
-
 }
 
-.card__slider__btn__container{
+.card-slider-btn-container{
     position: absolute;
     top: 50%;
     left: 0;
@@ -307,6 +336,16 @@ input:-webkit-autofill {
     display: flex;
     justify-content: space-between;
 }
+
+.card-img {
+  object-fit: cover;
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); */
+  border-radius: 5px;
+  height: 92%;
+  background-color: black;
+  padding: 3px;
+}
+
 .btn{
   width: 40px;
   height: 40vh;
@@ -317,9 +356,11 @@ input:-webkit-autofill {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   background-color: black;
 }
+
 .btn:hover{
- box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
+
 .prev {
   border-radius: 0 3px 3px 0;
 }
@@ -335,12 +376,14 @@ input:-webkit-autofill {
 .arrow {
   height: 3vh;
 }
-.outside__btns{
-    margin-top: 2rem;
+
+.outside-btns{
+    margin-top: 20px;
 }
-.outside__btns button{
+
+/* .outside-btns button{
   margin-right: 12px;
-}
+} */
 
 /* End of card details */
 

@@ -5,6 +5,7 @@ import { useMutation } from '@apollo/react-hooks';
 import { ADD_READING } from '../../utils/mutations';
 import { CURRENT_PAGE } from '../../utils/actions'
 import Auth from '../../utils/auth';
+import border from '../../assets/images/card-border.svg'
 
 
 
@@ -82,27 +83,32 @@ const Detail = () => {
 	return (
 		<section className="detail-section">
 
-			<h3 className="detail__header">{heading}</h3>
-			<div className="card__slider--container">
+			<h3 className="detail-header">{heading}</h3>
+			<div className="card-slider-container">
 				<div className="card">
-					<div className={isFlipped ? "card__inner is-flipped" : "card__inner"}>
-						<div className="card__face card__face--front">
+					<div className={isFlipped ? "card-inner is-flipped" : "card-inner"}>
+
+						{/* Front of card */}
+						<div className="card-face card-face-front">
 							<img src={require(`../../assets/images/cards/${image}`).default} className='card-img' alt={name} />
 						</div>
-						<div className="card__face card__face--back">
-							<div className="card__content">
-								<div className="card__body">
-									<h3 className="card__desc__head">Description</h3>
-									<div className="underline"></div>
-									<div className="card__text">{text}</div>
 
+						{/* Back of card */}
+						<div className="card-face card-face-back">
+							<div className="card-content">
+								<div className="card-body">
+									<div className='desc'>
+										<h3 className="card-desc-head">Description</h3>
+										<div className="card-text">{text}</div>
+									</div>
 								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 
-				<div className="card__slider__btn__container">
+				<div className="card-slider-btn-container">
 					<button className="btn prev" onClick={prev}>
 						<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
 					</button>
@@ -111,11 +117,11 @@ const Detail = () => {
 					</button>
 				</div>
 			</div>
-			<div className="outside__btns">
+			<div className="outside-btns">
 				<button onClick={clickhandler}>{isFlipped ? 'view card' : 'view description'}</button>
 				{Auth.loggedIn() ? (
 					<button onClick={saveReading}>save reading</button>
-				) : null }
+				) : null}
 			</div>
 
 		</section>
