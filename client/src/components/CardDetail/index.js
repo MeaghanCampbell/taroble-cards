@@ -4,6 +4,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_READING } from '../../utils/mutations';
 import { CURRENT_PAGE } from '../../utils/actions'
+import Auth from '../../utils/auth';
 
 
 
@@ -112,7 +113,9 @@ const Detail = () => {
 			</div>
 			<div className="outside__btns">
 				<button onClick={clickhandler}>{isFlipped ? 'view card' : 'view description'}</button>
-				<button onClick={saveReading}>save reading</button>
+				{Auth.loggedIn() ? (
+					<button onClick={saveReading}>save reading</button>
+				) : null }
 			</div>
 
 		</section>

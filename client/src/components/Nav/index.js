@@ -64,9 +64,15 @@ const Nav = () => {
 				{Auth.loggedIn() ? (
 					<>
 						<ul>
-							<li>
-								<p onClick={dashboard} className="signup-login">DASHBOARD</p>
-							</li>
+							{currentPage === 'dashboard' ? (
+								<li>
+									<p onClick={home} className="signup-login">GET ANOTHER READING</p>
+								</li>
+							) : (
+								<li>
+									<p onClick={dashboard} className="signup-login">DASHBOARD</p>
+								</li>
+							)}
 							<li>
 								<Link to="/" onClick={logout} className="signup-login">
 									LOGOUT
@@ -75,17 +81,17 @@ const Nav = () => {
 						</ul>
 					</>
 				) : (
-						<>
-							<ul>
-								<li>
-									<p onClick={login} className='signup-login'>LOGIN</p>
-								</li>
-								<li>
-									<p onClick={signUp} className='signup-login'>SIGNUP</p>
-								</li>
-							</ul>
-						</>
-					)}
+					<>
+						<ul>
+							<li>
+								<p onClick={login} className='signup-login'>LOGIN</p>
+							</li>
+							<li>
+								<p onClick={signUp} className='signup-login'>SIGNUP</p>
+							</li>
+						</ul>
+					</>
+				)}
 		</header>
 	)
 }
