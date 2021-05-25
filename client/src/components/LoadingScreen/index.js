@@ -1,17 +1,19 @@
-import React from 'react';
-// import anime from 'animejs';
-import animatedT from '../../assets/images/animated-logo.svg'
+import React, { useEffect } from 'react';
+import animatedT from '../../assets/images/figma-t-undraw.svg'
+import { CURRENT_PAGE } from '../../utils/actions';
+import { useStoreContext } from "../../utils/GlobalState";
 
-const Loading = (props) => {
-  // anime({
-  //   targets: '#T path',
-  //   strokeDashoffset: [anime.setDashoffset, 0],
-  //   easing: 'easeInOutSine',
-  //   duration: 2000,
-  //   delay: function (el, i) { return i * 500 },
-  //   direction: 'alternate',
-  //   loop: true
-  // });
+const Loading = () => {
+  // import the global state and dispatch
+  const [state, dispatch] = useStoreContext();
+
+  useEffect (()=>{
+    setTimeout(function(){ dispatch({
+      type: CURRENT_PAGE,
+      currentPage: 'home'
+    })  }, 9000);
+  }, [])
+
 
   return (
     <div>

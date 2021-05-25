@@ -3,10 +3,18 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../../utils/mutations';
 
+import { CURRENT_PAGE } from '../../utils/actions';
+import { useStoreContext } from "../../utils/GlobalState";
+
 import Auth from '../../utils/auth';
 
 const SignUp = () => {
-	const [formState, setFormState] = useState({ email: '', password: '' });
+	// import the global state and dispatch
+	const [state, dispatch] = useStoreContext();
+	// extract previousPage from the state object
+	const { previousPage } = state;
+	
+	const [formState, setFormState] = useState({ email: '', username: '', password: '' });
 
 	const [addUser, { error }] = useMutation(ADD_USER);
 
@@ -30,6 +38,10 @@ const SignUp = () => {
 			});
 
 			Auth.login(data.addUser.token)
+			dispatch({
+				type: CURRENT_PAGE,
+				currentPage: previousPage
+			})
 	
 		} catch (e) {
 			console.error(e);

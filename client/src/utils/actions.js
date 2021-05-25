@@ -1,1 +1,3 @@
 export const CURRENT_READING = "CURRENT_READING"
+export const CURRENT_PAGE = "CURRENT_PAGE"
+export const PREVIOUS_PAGE = "PREVIOUS_PAGE"

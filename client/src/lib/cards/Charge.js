@@ -4,10 +4,10 @@ class Charge extends Card {
     constructor() {
         super();
         this.name = "Charge!!!";
-        this.image = 'link placeholder';
-        this.pastText = 'past placeholder';
-        this.presentText = 'present placeholder';
-        this.futureText = 'future placeholder';
+        this.image = 'charge.png';
+        this.pastText = "Your chosen moments for taking initiative really haven't been the best, historically.";
+        this.presentText = "To hell with the consequences, legal or otherwise, just rip off the band-aid!";
+        this.futureText = "You'll know when the time comes. You'll miss out on doing anything about it, but at least you'll know.";
     }
 }
 

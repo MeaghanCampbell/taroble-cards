@@ -6,15 +6,12 @@ import { ApolloProvider } from '@apollo/react-hooks';
 //  We'll use the ApolloClient to get that data when we're ready to use it.
 import ApolloClient from 'apollo-boost';
 
-import Login from "./components/Login";
-import SignUp from "./components/SignUP";
-import Nav from "./components/Nav";
-import Home from "./components/Home";
-import Dashboard from "./components/Dashboard";
-import CardDetail from "./components/CardDetail";
-// import Loading from './components/LoadingScreen';
 
-import { StoreProvider } from "./utils/GlobalState"
+import Nav from "./components/Nav";
+import Main from "./components/Main";
+import Dashboard from "./components/Dashboard";
+
+import { useStoreContext } from "./utils/GlobalState"
 
 const client = new ApolloClient({
   request: operation => {
@@ -32,39 +29,33 @@ const client = new ApolloClient({
   uri: '/graphql'
 });
 
+let showNav = true;
+
 function App() {
 
-  window.VANTA.FOG({
-    el: "body",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    highlightColor: 0x666666,
-    midtoneColor: 0x0,
-    lowlightColor: 0x0,
-    baseColor: 0x0,
-    blurFactor: 0.45,
-    speed: 0.60
-  })
+  // import the global state and dispatch
+	const [state] = useStoreContext();
+	// extract currentReading from the state object
+	const { currentPage } = state;
+	// console log the currentReading data
+	console.log(currentPage)
+
+  if (currentPage === 'loading' || currentPage === 'messages') {
+    showNav = false;
+  } else {
+    showNav = true;
+  }
 
   return (
     <ApolloProvider client={client}>
       <Router>
-        <StoreProvider>
-        <Nav />
+      {showNav &&  <Nav />}
         <main>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/card-detail" component={CardDetail} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={SignUp} />
+            <Route exact path="/" component={Main}/>
             <Route path="/dashboard" component={Dashboard} />
           </Switch>
         </main>
-        {/* <Loading /> */}
-        </StoreProvider>
       </Router>
     </ApolloProvider>
   );

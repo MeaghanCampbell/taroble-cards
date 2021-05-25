@@ -6,10 +6,10 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      friendCount
-      friends {
+      readings {
         _id
-        username
+        date
+        readingData
       }
     }
   }
