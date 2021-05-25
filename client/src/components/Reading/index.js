@@ -30,7 +30,7 @@ const Reading = ({ userData }) => {
 
     return (
         <div>
-         {userData.me.readings.map((reading) => (
+        {userData.me.readings.map((reading) => (
             <Link key={reading._id} to="/">
                 <div onClick={() =>{loadDetail(reading.readingData)}} className="card-container">	
                     <div className="card-container-center">

@@ -49,7 +49,7 @@ const SignUp = () => {
 	};
 
 	return (
-		<div>
+		<main>
 			<form className='login-signup-form' onSubmit={handleFormSubmit}>
 				<div>
 					<p className='form-header'>SIGN UP </p>
@@ -108,7 +108,7 @@ const SignUp = () => {
 				</div>
 			</form>
 			{error && <div>Sign up failed</div>}
-		</div>
+		</main>
 	)
 }
 

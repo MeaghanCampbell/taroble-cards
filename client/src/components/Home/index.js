@@ -26,7 +26,7 @@ const Home = () => {
 	}
 
 	return (
-		<section>
+		<main>
 			<div className=" home-section section-center">
 				<h1 className='title-home'>Taroble Cards</h1>
 				<div className='get-reading-btn'>
@@ -35,7 +35,7 @@ const Home = () => {
 					</button>
 				</div>
 			</div>
-		</section>
+		</main>
 	)
 }
 

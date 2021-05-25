@@ -50,12 +50,10 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
       {showNav &&  <Nav />}
-        <main>
           <Switch>
             <Route exact path="/" component={Main}/>
             <Route path="/dashboard" component={Dashboard} />
           </Switch>
-        </main>
       </Router>
     </ApolloProvider>
   );

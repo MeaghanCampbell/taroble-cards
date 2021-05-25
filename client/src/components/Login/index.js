@@ -48,7 +48,7 @@ const Login = (props) => {
     }
   };
   return (
-    <div>
+    <main>
       <form className='login-signup-form' onSubmit={handleFormSubmit}>
         <div>
           <p className='form-header'>LOGIN </p>
@@ -92,7 +92,7 @@ const Login = (props) => {
 				</div>
 			</form>
 			{error && <div>login failed.</div>}
-		</div>
+		</main>
 	)
 }
 

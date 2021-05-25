@@ -27,7 +27,7 @@ body{
   min-height: 100vh;
   min-height: 100ww;
   position: relative;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 main{
@@ -348,12 +348,12 @@ input:-webkit-autofill {
 /* Dashboard page */
 
 .dashboard-container {
-  height: 80vh;
+  height: 93vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .user {
@@ -373,7 +373,7 @@ input:-webkit-autofill {
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 10px rgba(255,255,255,0.5); 
   box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
-  /* margin: 2vh 0 0 2vh; */
+  margin-bottom: 20px;
 }
 
 .card-container-center {
@@ -390,6 +390,7 @@ input:-webkit-autofill {
   font-size: 0.75rem;
   margin-top: 5px;
   letter-spacing: 4px;
+  text-decoration: none !important;
 }
 
 .cards{
