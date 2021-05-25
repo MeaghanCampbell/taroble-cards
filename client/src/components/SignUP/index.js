@@ -13,7 +13,7 @@ const SignUp = () => {
 	const [state, dispatch] = useStoreContext();
 	// extract previousPage from the state object
 	const { previousPage } = state;
-	
+
 	const [formState, setFormState] = useState({ email: '', username: '', password: '' });
 
 	const [addUser, { error }] = useMutation(ADD_USER);
@@ -42,7 +42,7 @@ const SignUp = () => {
 				type: CURRENT_PAGE,
 				currentPage: previousPage
 			})
-	
+
 		} catch (e) {
 			console.error(e);
 		}
@@ -101,13 +101,14 @@ const SignUp = () => {
 					</div>
 				</div>
 
+					{error && <div className='error'>sign up failed</div>}
+
 				<div>
 					<button className='sign-in-btn' type="submit">
 						SIGN UP
           </button>
 				</div>
 			</form>
-			{error && <div>Sign up failed</div>}
 		</main>
 	)
 }
