@@ -5,14 +5,14 @@ import { useMutation } from '@apollo/react-hooks';
 import { ADD_READING } from '../../utils/mutations';
 import { CURRENT_PAGE } from '../../utils/actions'
 import Auth from '../../utils/auth';
-
+import { Link } from 'react-router-dom';
 
 
 const Detail = () => {
 	// import the global state and dispatch
 	const [state, dispatch] = useStoreContext();
 	// extract currentReading from the state object
-	const { currentReading } = state;
+	const { currentReading, previousPage } = state;
 	// console log the currentReading data
 	console.log(currentReading)
 	// 
@@ -33,6 +33,9 @@ const Detail = () => {
 			// send them to the dashboard after saving the reading
 			currentPage: 'dashboard'
 		})
+
+		// window.location.assign('/dashboard')
+		
 	};
 
 	const cards = [
@@ -113,9 +116,16 @@ const Detail = () => {
 			</div>
 			<div className="outside__btns">
 				<button onClick={clickhandler}>{isFlipped ? 'view card' : 'view description'}</button>
-				{Auth.loggedIn() ? (
-					<button onClick={saveReading}>save reading</button>
-				) : null }
+				{Auth.loggedIn() && previousPage !== 'dashboard' ? (
+					<button> 
+						<Link to="/dashboard" onClick={saveReading}>save reading </Link>
+					</button>
+				) : null } 
+				{Auth.loggedIn() && previousPage === 'dashboard' ?(
+					<button> 
+						<Link to="/dashboard"> dashboard </Link>
+					</button>
+				) : null } 
 			</div>
 
 		</section>

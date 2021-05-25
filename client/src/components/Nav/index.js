@@ -8,7 +8,7 @@ const Nav = () => {
 	// import the global state and dispatch
     const [state, dispatch] = useStoreContext();
     // extract currentPage from the state object
-    const { currentPage } = state;
+    const { currentPage, previousPage } = state;
 
 	const logout = event => {
 		event.preventDefault();
@@ -29,7 +29,7 @@ const Nav = () => {
 	}
 
 	const dashboard = event => {
-		event.preventDefault();
+		
 		dispatch({
 			type: CURRENT_PAGE,
 			currentPage: 'dashboard'
@@ -49,7 +49,6 @@ const Nav = () => {
 	}
 
 	const home = event => {
-		event.preventDefault();
 		dispatch({
 			type: CURRENT_PAGE,
 			currentPage: 'home'
@@ -59,18 +58,18 @@ const Nav = () => {
 	return (
 		<header>
 				<h3>
-				<p onClick={home} className='title-nav'>Taroble Cards</p>
+				<Link to="/" onClick={home} className='title-nav'>Taroble Cards</Link>
 				</h3>
 				{Auth.loggedIn() ? (
 					<>
 						<ul>
-							{currentPage === 'dashboard' ? (
+							{currentPage === 'dashboard' || (currentPage === 'detail' && previousPage === 'dashboard') ? (
 								<li>
-									<p onClick={home} className="signup-login">GET ANOTHER READING</p>
+									<Link to="/" onClick={home} className="signup-login">GET ANOTHER READING</Link>
 								</li>
 							) : (
 								<li>
-									<p onClick={dashboard} className="signup-login">DASHBOARD</p>
+									<Link to="/dashboard" onClick={dashboard} className="signup-login">DASHBOARD</Link>
 								</li>
 							)}
 							<li>

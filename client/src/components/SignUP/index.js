@@ -14,7 +14,7 @@ const SignUp = () => {
 	// extract previousPage from the state object
 	const { previousPage } = state;
 	
-	const [formState, setFormState] = useState({ email: '', password: '' });
+	const [formState, setFormState] = useState({ email: '', username: '', password: '' });
 
 	const [addUser, { error }] = useMutation(ADD_USER);
 
