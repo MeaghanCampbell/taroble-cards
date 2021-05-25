@@ -34,7 +34,7 @@ const Detail = () => {
 			currentPage: 'dashboard'
 		})
 
-		window.location.assign('/dashboard')
+		// window.location.assign('/dashboard')
 		
 	};
 

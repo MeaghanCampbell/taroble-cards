@@ -13,7 +13,6 @@ import Dashboard from "./components/Dashboard";
 
 import { useStoreContext } from "./utils/GlobalState"
 
-
 const client = new ApolloClient({
   request: operation => {
     // retrieve the token from localStorage before each request
@@ -30,6 +29,8 @@ const client = new ApolloClient({
   uri: '/graphql'
 });
 
+let showNav = true;
+
 function App() {
 
   // import the global state and dispatch
@@ -39,10 +40,16 @@ function App() {
 	// console log the currentReading data
 	console.log(currentPage)
 
+  if (currentPage === 'loading' || currentPage === 'messages') {
+    showNav = false;
+  } else {
+    showNav = true;
+  }
+
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Nav />
+      {showNav &&  <Nav />}
         <main>
           <Switch>
             <Route exact path="/" component={Main}/>
