@@ -5,8 +5,8 @@ import { ADD_USER } from '../../utils/mutations';
 
 import { CURRENT_PAGE } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
-
 import Auth from '../../utils/auth';
+import {validateEmail} from '../../utils/helpers'
 
 const SignUp = () => {
 	// import the global state and dispatch
@@ -14,18 +14,34 @@ const SignUp = () => {
 	// extract previousPage from the state object
 	const { previousPage } = state;
 	
-	const [formState, setFormState] = useState({ email: '', password: '' });
+	const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+	const {username, email, password} = formState
+	const [errorMessage, setErrorMessage] = useState('')
 
 	const [addUser, { error }] = useMutation(ADD_USER);
 
 	// update state based on form input changes
 	const handleChange = (event) => {
-		const { name, value } = event.target;
 
-		setFormState({
-			...formState,
-			[name]: value,
-		});
+		if (event.target.name === 'email') {
+			const isValid = validateEmail(event.target.value)
+
+			if (!isValid) {
+                setErrorMessage('Your email is invalid')
+			} else {
+				setErrorMessage('')
+			}
+		} else {
+			if (!event.target.value.length) {
+				setErrorMessage(`${event.target.name} is required`)
+			} else {
+				setErrorMessage('')
+			}
+		}
+
+        if (!errorMessage) {
+            setFormState({ ...formState, [event.target.name]: event.target.value });
+        }
 	};
 
 	// submit form
@@ -65,8 +81,9 @@ const SignUp = () => {
 							placeholder="email"
 							autoComplete="off"
 							required
-							value={formState.email}
-							onChange={handleChange}
+							// value={formState.email}
+							defaultValue={email}
+							onBlur={handleChange}
 						/>
 					</div>
 				</div>
@@ -79,8 +96,9 @@ const SignUp = () => {
 							type="username"
 							placeholder='username'
 							autoComplete="off"
-							value={formState.username}
-							onChange={handleChange}
+							// value={formState.username}
+							defaultValue={username}
+							onBlur={handleChange}
 							required
 						/>
 					</div>
@@ -94,8 +112,9 @@ const SignUp = () => {
 							type="password"
 							placeholder='password'
 							autoComplete="off"
-							value={formState.password}
-							onChange={handleChange}
+							// value={formState.password}
+							defaultValue={password}
+							onBlur={handleChange}
 							required
 						/>
 					</div>
@@ -107,7 +126,9 @@ const SignUp = () => {
           </button>
 				</div>
 			</form>
-			{error && <div>Sign up failed</div>}
+			{errorMessage && (
+				<div className="signup-login">{errorMessage}</div>
+			)}
 		</div>
 	)
 }

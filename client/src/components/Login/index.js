@@ -7,7 +7,6 @@ import { CURRENT_PAGE } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
 import Auth from '../../utils/auth';
-
 const Login = (props) => {
   // import the global state and dispatch
 	const [state, dispatch] = useStoreContext();
@@ -25,7 +24,7 @@ const Login = (props) => {
     setFormState({
       ...formState,
       [name]: value,
-    });
+    })
   };
 
   // submit form
@@ -47,6 +46,8 @@ const Login = (props) => {
       console.error(e);
     }
   };
+
+
   return (
     <div>
       <form className='login-signup-form' onSubmit={handleFormSubmit}>
@@ -91,7 +92,7 @@ const Login = (props) => {
           </button>
 				</div>
 			</form>
-			{error && <div>login failed.</div>}
+			{error && <div class="signup-login">incorrect username or password</div>}
 		</div>
 	)
 }
