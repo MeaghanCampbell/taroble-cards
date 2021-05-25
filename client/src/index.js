@@ -20,6 +20,10 @@ window.VANTA.FOG({
   speed: 0.60
 })
 
+window.onbeforeunload = () => {
+  localStorage.removeItem('id_token');
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <StoreProvider>
