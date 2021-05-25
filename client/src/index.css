@@ -390,6 +390,9 @@ input:-webkit-autofill {
   font-size: 0.75rem;
   margin-top: 5px;
   letter-spacing: 4px;
+}
+
+a:link {
   text-decoration: none !important;
 }
 
