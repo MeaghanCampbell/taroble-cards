@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../../utils/mutations';
 
-import { CURRENT_PAGE, PREVIOUS_PAGE } from '../../utils/actions';
+import { CURRENT_PAGE } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
 import Auth from '../../utils/auth';

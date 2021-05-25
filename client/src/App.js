@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 // ApolloProvider, is a special type of React component that we'll use to provide data to all of the other components
 import { ApolloProvider } from '@apollo/react-hooks';
 
@@ -37,27 +37,11 @@ const client = new ApolloClient({
 function App() {
 
   // import the global state and dispatch
-	const [state, dispatch] = useStoreContext();
+	const [state] = useStoreContext();
 	// extract currentReading from the state object
 	const { currentPage } = state;
 	// console log the currentReading data
 	console.log(currentPage)
-
-
-  window.VANTA.FOG({
-    el: "body",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    highlightColor: 0x666666,
-    midtoneColor: 0x0,
-    lowlightColor: 0x0,
-    baseColor: 0x0,
-    blurFactor: 0.45,
-    speed: 0.60
-  })
 
   return (
     <ApolloProvider client={client}>
@@ -65,12 +49,6 @@ function App() {
         
         <Nav />
         <main>      
-          {/* <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/dashboard" component={Dashboard} />
-          </Switch> */}
           { currentPage === 'home' &&  <Home/> }
           { currentPage === 'loading' &&  <Loading/> }
           { currentPage === 'messages' &&  <ReadingMessages/> }

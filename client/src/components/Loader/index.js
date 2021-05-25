@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import animatedT from '../../assets/images/figma-t-undraw.svg'
 
 const Loader = () => {

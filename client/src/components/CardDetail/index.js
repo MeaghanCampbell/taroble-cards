@@ -31,7 +31,7 @@ const Detail = () => {
 	// console log the currentReading data
 	console.log(currentReading)
 	// 
-	const [addReading, { error }] = useMutation(ADD_READING);
+	const [addReading] = useMutation(ADD_READING);
 
 	// save the current reading
 	const saveReading = async event => {

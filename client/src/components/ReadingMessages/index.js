@@ -24,8 +24,6 @@ const messages = [
 const ReadingMessages = () => {
     // import the global state and dispatch
     const [state, dispatch] = useStoreContext();
-    // extract currentPage from the state object
-    const { currentPage } = state;
     
     const { Random } = require("random-js");
     const random = new Random
