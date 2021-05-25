@@ -35,6 +35,8 @@ const ReadingMessages = () => {
     const props = useSpring({
       to: [
           { opacity: 1 },
+          { opacity: .99 },
+          { opacity: 1 },
           { opacity: 0 }
         ],
       from: { opacity: 0 },
