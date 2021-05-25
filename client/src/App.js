@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 // ApolloProvider, is a special type of React component that we'll use to provide data to all of the other components
 import { ApolloProvider } from '@apollo/react-hooks';
 
@@ -10,12 +10,13 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUP";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
-import Dashboard from "./components/Dashboard";
 import CardDetail from "./components/CardDetail";
-// import Loading from './components/LoadingScreen';
-// import ReadingMessages from './components/ReadingMessages';
+import Loading from './components/LoadingScreen';
+import ReadingMessages from './components/ReadingMessages';
+import Dashboard from "./components/Dashboard";
 
-import { StoreProvider } from "./utils/GlobalState"
+import { useStoreContext } from "./utils/GlobalState"
+
 
 const client = new ApolloClient({
   request: operation => {
@@ -35,38 +36,27 @@ const client = new ApolloClient({
 
 function App() {
 
-  window.VANTA.FOG({
-    el: "body",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    highlightColor: 0x666666,
-    midtoneColor: 0x0,
-    lowlightColor: 0x0,
-    baseColor: 0x0,
-    blurFactor: 0.45,
-    speed: 0.60
-  })
+  // import the global state and dispatch
+	const [state] = useStoreContext();
+	// extract currentReading from the state object
+	const { currentPage } = state;
+	// console log the currentReading data
+	console.log(currentPage)
 
   return (
     <ApolloProvider client={client}>
       <Router>
-        <StoreProvider>
+        
         <Nav />
-        <main>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/card-detail" component={CardDetail} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/dashboard" component={Dashboard} />
-          </Switch>
+        <main>      
+          { currentPage === 'home' &&  <Home/> }
+          { currentPage === 'loading' &&  <Loading/> }
+          { currentPage === 'messages' &&  <ReadingMessages/> }
+          { currentPage === 'detail' &&  <CardDetail/> }
+          { currentPage === 'login' &&  <Login/> }
+          { currentPage === 'signUp' &&  <SignUp/> }
+          { currentPage === 'dashboard' &&  <Dashboard/> }
         </main>
-        {/* <Loading /> */}
-        {/* <ReadingMessages /> */}
-        </StoreProvider>
       </Router>
     </ApolloProvider>
   );

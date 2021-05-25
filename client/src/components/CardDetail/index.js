@@ -3,6 +3,7 @@ import arrow from '../../assets/images/arrow-right.svg'
 import { useStoreContext } from "../../utils/GlobalState";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_READING } from '../../utils/mutations';
+import { CURRENT_PAGE } from '../../utils/actions'
 
 
 
@@ -12,9 +13,9 @@ const Detail = () => {
 	// extract currentReading from the state object
 	const { currentReading } = state;
 	// console log the currentReading data
-
-
-	const [addReading, { error }] = useMutation(ADD_READING);
+	console.log(currentReading)
+	// 
+	const [addReading] = useMutation(ADD_READING);
 
 	// save the current reading
 	const saveReading = async event => {
@@ -26,6 +27,11 @@ const Detail = () => {
 		} catch (e) {
 			console.error(e);
 		}
+		dispatch({
+			type: CURRENT_PAGE,
+			// send them to the dashboard after saving the reading
+			currentPage: 'dashboard'
+		})
 	};
 
 	const cards = [
