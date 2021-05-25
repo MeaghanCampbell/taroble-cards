@@ -121,6 +121,11 @@ const Detail = () => {
 						<Link to="/dashboard" onClick={saveReading}>save reading </Link>
 					</button>
 				) : null } 
+				{Auth.loggedIn() && previousPage === 'dashboard' ?(
+					<button> 
+						<Link to="/dashboard"> dashboard </Link>
+					</button>
+				) : null } 
 			</div>
 
 		</section>
