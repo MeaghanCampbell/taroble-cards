@@ -116,7 +116,7 @@ const Detail = () => {
 			</div>
 			<div className="outside__btns">
 				<button onClick={clickhandler}>{isFlipped ? 'view card' : 'view description'}</button>
-				{Auth.loggedIn() && previousPage != 'dashboard' ? (
+				{Auth.loggedIn() && previousPage !== 'dashboard' ? (
 					<button> 
 						<Link to="/dashboard" onClick={saveReading}>save reading </Link>
 					</button>
