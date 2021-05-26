@@ -40,7 +40,7 @@ function App() {
 	// console log the currentReading data
 	console.log(currentPage)
 
-  if (currentPage === 'loading' || currentPage === 'messages') {
+  if (currentPage === 'loading' || currentPage === 'messages' || currentPage === 'shuffle') {
     showNav = false;
   } else {
     showNav = true;
@@ -50,12 +50,10 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
       {showNav &&  <Nav />}
-        <main>
           <Switch>
             <Route exact path="/" component={Main}/>
             <Route path="/dashboard" component={Dashboard} />
           </Switch>
-        </main>
       </Router>
     </ApolloProvider>
   );

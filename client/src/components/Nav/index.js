@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Reading from '../../lib/Reading'
 import Auth from '../../utils/auth';
-import { CURRENT_PAGE, PREVIOUS_PAGE } from '../../utils/actions';
+import { CURRENT_PAGE, PREVIOUS_PAGE, CURRENT_READING } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
 const Nav = () => {
@@ -9,6 +10,23 @@ const Nav = () => {
     const [state, dispatch] = useStoreContext();
     // extract currentPage from the state object
     const { currentPage, previousPage } = state;
+
+	// generate a new reading and save it to the currentReading in global state
+	const getReading = () => {
+		const reading = new Reading;
+		
+		dispatch({
+			type: CURRENT_READING,
+			// generate a new reading and save it to the currentReading in global state
+			currentReading: reading.generateReading()
+		})
+
+		dispatch({
+			type: CURRENT_PAGE,
+			// send user to messages component
+			currentPage: 'messages'
+		})
+	}
 
 	const logout = event => {
 		event.preventDefault();
@@ -33,7 +51,7 @@ const Nav = () => {
 		dispatch({
 			type: CURRENT_PAGE,
 			currentPage: 'dashboard'
-		  })
+		})
 	}
 
 	const signUp = event => {
@@ -45,27 +63,30 @@ const Nav = () => {
 		dispatch({
 			type: CURRENT_PAGE,
 			currentPage: 'signUp'
-		  })
+		})
 	}
 
 	const home = event => {
 		dispatch({
 			type: CURRENT_PAGE,
 			currentPage: 'home'
-		  })
+		})
 	}
 
 	return (
 		<header>
+			{currentPage !== 'home' ? (
 				<h3>
 				<Link to="/" onClick={home} className='title-nav'>Taroble Cards</Link>
 				</h3>
+			): (<h3></h3>)}
+
 				{Auth.loggedIn() ? (
 					<>
 						<ul>
 							{currentPage === 'dashboard' || (currentPage === 'detail' && previousPage === 'dashboard') ? (
 								<li>
-									<Link to="/" onClick={home} className="signup-login">GET ANOTHER READING</Link>
+									<Link to="/" onClick={getReading} className="signup-login">NEW READING</Link>
 								</li>
 							) : (
 								<li>
@@ -75,7 +96,7 @@ const Nav = () => {
 							<li>
 								<Link to="/" onClick={logout} className="signup-login">
 									LOGOUT
-                				</Link>
+                </Link>
 							</li>
 						</ul>
 					</>

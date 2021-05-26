@@ -26,16 +26,18 @@ const Home = () => {
 	}
 
 	return (
-		<section>
-			<div className=" home-section section-center">
+		<div className="home-section">
+				<div className='border'></div>
+				<div className='home-container'>
 				<h1 className='title-home'>Taroble Cards</h1>
 				<div className='get-reading-btn'>
 					<button type="submit" onClick={getReading}>
 						GET A READING
 					</button>
 				</div>
+				</div>
+				<footer className='border'></footer>
 			</div>
-		</section>
 	)
 }
 
