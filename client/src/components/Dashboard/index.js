@@ -14,8 +14,8 @@ const Dashboard = () => {
 
 	const [isLoading, setIsLoading] = useState(true);
 	const { data: userData } = useQuery(QUERY_ME, {
-		fetchPolicy: "no-cache"
-	}); 
+		pollInterval: 500,
+	  });
 	const username = Auth.getProfile().data.username;
 	const loggedIn = Auth.loggedIn();
 

@@ -39,21 +39,21 @@ const Detail = () => {
 	const cards = [
 		{
 			heading: "past",
-			image: currentReading.past.image,
-			name: currentReading.past.name,
-			text: currentReading.past.pastText,
+			image: currentReading.reading.past.image,
+			name: currentReading.reading.past.name,
+			text: currentReading.reading.past.pastText,
 		},
 		{
 			heading: "present",
-			image: currentReading.present.image,
-			name: currentReading.present.name,
-			text: currentReading.present.presentText
+			image: currentReading.reading.present.image,
+			name: currentReading.reading.present.name,
+			text: currentReading.reading.present.presentText
 		},
 		{
 			heading: "future",
-			image: currentReading.future.image,
-			name: currentReading.future.name,
-			text: currentReading.future.futureText,
+			image: currentReading.reading.future.image,
+			name: currentReading.reading.future.name,
+			text: currentReading.reading.future.futureText,
 		}
 	];
 

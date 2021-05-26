@@ -1,5 +1,7 @@
 import React from 'react';
-import Reading from '../../lib/Reading'
+// import Reading from '../../lib/Reading'
+import { useQuery } from '@apollo/react-hooks';
+import { QUERY_READING } from '../../utils/queries';
 import { CURRENT_READING, CURRENT_PAGE } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
@@ -7,15 +9,17 @@ import { useStoreContext } from "../../utils/GlobalState";
 const Home = () => {
 	// import the global state and dispatch
 	const [, dispatch] = useStoreContext();
+	const { data: reading } = useQuery(QUERY_READING, {
+		pollInterval: 500,
+	  });
 
 	// generate a new reading and save it to the currentReading in global state
 	const getReading = () => {
-		const reading = new Reading();
 		
 		dispatch({
 			type: CURRENT_READING,
 			// generate a new reading and save it to the currentReading in global state
-			currentReading: reading.generateReading()
+			currentReading: reading
 		})
 
 		dispatch({

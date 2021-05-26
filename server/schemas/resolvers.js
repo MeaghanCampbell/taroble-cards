@@ -1,3 +1,5 @@
+const GenReading = require('../lib/Reading')
+
 // import models
 const { User, Reading } = require('../models');
 
@@ -29,7 +31,11 @@ const resolvers = {
                 .select('-__v -password')
                 .populate('readings')
         },
-
+        // get a reading
+        reading: async () => {
+            const newReading = new GenReading
+            return newReading.generateReading()
+        },
         // read request header for jwt
         me: async (parent, args, context) => {
             if (context.user) {

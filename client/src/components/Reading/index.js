@@ -36,9 +36,9 @@ const Reading = ({ userData }) => {
                     <div className="card-container-center">
                         <p className="reading-date">{reading.date}</p>
                         <div className="cards">
-                            <img className='dash-card-1' src={require(`../../assets/images/cards/${reading.readingData.past.image}`).default} alt={reading.readingData.past.name} />
-                            <img className='dash-card-2' src={require(`../../assets/images/cards/${reading.readingData.present.image}`).default} alt={reading.readingData.present.name} />
-                            <img className='dash-card-3' src={require(`../../assets/images/cards/${reading.readingData.future.image}`).default} alt={reading.readingData.future.name} />
+                            <img className='dash-card-1' src={require(`../../assets/images/cards/${reading.readingData.reading.past.image}`).default} alt={reading.readingData.reading.past.name} />
+                            <img className='dash-card-2' src={require(`../../assets/images/cards/${reading.readingData.reading.present.image}`).default} alt={reading.readingData.reading.present.name} />
+                            <img className='dash-card-3' src={require(`../../assets/images/cards/${reading.readingData.reading.future.image}`).default} alt={reading.readingData.reading.future.name} />
                         </div>
                     </div>
                 </div>

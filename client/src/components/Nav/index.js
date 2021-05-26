@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Reading from '../../lib/Reading'
+// import Reading from '../../lib/Reading'
 import Auth from '../../utils/auth';
+import { useQuery } from '@apollo/react-hooks';
+import { QUERY_READING } from '../../utils/queries';
 import { CURRENT_PAGE, PREVIOUS_PAGE, CURRENT_READING } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
@@ -10,15 +12,18 @@ const Nav = () => {
     const [state, dispatch] = useStoreContext();
     // extract currentPage from the state object
     const { currentPage, previousPage } = state;
+	
+	const { data: reading } = useQuery(QUERY_READING, {
+		pollInterval: 500,
+	  });
 
 	// generate a new reading and save it to the currentReading in global state
 	const getReading = () => {
-		const reading = new Reading();
 		
 		dispatch({
 			type: CURRENT_READING,
 			// generate a new reading and save it to the currentReading in global state
-			currentReading: reading.generateReading()
+			currentReading: reading
 		})
 
 		dispatch({

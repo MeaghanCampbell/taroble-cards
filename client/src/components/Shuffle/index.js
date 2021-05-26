@@ -9,9 +9,9 @@ const Shuffle = () => {
   // extract currentReading from the state object
   const { currentReading } = state;
 
-  let pastCard = currentReading.past.image
-  let presentCard = currentReading.present.image
-  let futureCard = currentReading.future.image
+  let pastCard = currentReading.reading.past.image
+  let presentCard = currentReading.reading.present.image
+  let futureCard = currentReading.reading.future.image
 
   const [card, setCard] = useState(pastCard)
   const [title, setTitle] = useState('Past')

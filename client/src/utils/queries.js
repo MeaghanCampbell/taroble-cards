@@ -49,3 +49,9 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
+
+export const QUERY_READING = gql`
+  {
+    reading
+  }
+`;

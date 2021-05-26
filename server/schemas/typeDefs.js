@@ -26,6 +26,7 @@ const typeDefs = gql`
     type Query {
         me: User
         users: [User]
+        reading: JSON
         user(username: String!): User
     }
 
