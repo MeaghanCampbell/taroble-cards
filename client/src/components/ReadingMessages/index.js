@@ -70,7 +70,9 @@ const ReadingMessages = () => {
 
   return (
     <div className="load-img-container">
+      <div className='border'></div>
         <animated.h1 className='reading-messages' style={props}>{message}</animated.h1>
+        <footer className='border'></footer>
     </div>
   )
 }

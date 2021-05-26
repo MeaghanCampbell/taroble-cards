@@ -7,20 +7,22 @@ const Loading = () => {
   // import the global state and dispatch
   const [state, dispatch] = useStoreContext();
 
-  useEffect (()=>{
-    setTimeout(function(){ dispatch({
-      type: CURRENT_PAGE,
-      currentPage: 'home'
-    })  }, 9000);
+  useEffect(() => {
+    setTimeout(function () {
+      dispatch({
+        type: CURRENT_PAGE,
+        currentPage: 'home'
+      })
+    }, 9000);
   }, [])
 
 
   return (
-    <div>
       <div className="load-img-container">
-      <object className='t' type="image/svg+xml" data={animatedT}>svg-animation</object>
+      <div className='border'></div>
+        <object className='t' type="image/svg+xml" data={animatedT}>svg-animation</object>
+      <footer className='border'></footer>
       </div>
-    </div>
   )
 }
 
