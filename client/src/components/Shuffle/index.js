@@ -9,11 +9,11 @@ const Shuffle = () => {
     // extract currentReading from the state object
     const { currentReading } = state;
 
-    let messageOne = currentReading.past.image
-    let messageTwo = currentReading.present.image
-    let messageThree = currentReading.future.image
+    let pastCard = currentReading.past.image
+    let presentCard = currentReading.present.image
+    let futureCard = currentReading.future.image
 
-    const [message, setMessage] = useState(messageOne)
+    const [card, setCard] = useState(pastCard)
     const [title, setTitle] = useState('Past')
     const props = useSpring({
       to: [
@@ -44,12 +44,12 @@ const Shuffle = () => {
     useEffect (()=>{
         // display cards
         setTimeout(function(){ 
-          setMessage(messageTwo); 
+          setCard(presentCard); 
           setTitle('Present');
         }, 3000);
 
         setTimeout(function(){ 
-          setMessage(messageThree); 
+          setCard(futureCard); 
           setTitle('Future');
         }, 6000);
 
@@ -73,7 +73,7 @@ const Shuffle = () => {
     <div className="load-img-container">
       <animated.div style={props}> 
         <h3 className='detail-header'>{title}</h3>
-        <img className='reading-messages'  src={require(`../../assets/images/cards/${message}`).default} className='card-img'/>
+        <img className='reading-messages'  src={require(`../../assets/images/cards/${card}`).default} className='card-img'/>
       </animated.div>
     </div>
   )
