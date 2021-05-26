@@ -44,4 +44,4 @@ class Reading {
     }
 };
 
-export default Reading;
+module.exports = Reading;
