@@ -5,11 +5,6 @@ import { ADD_READING } from '../../utils/mutations';
 import { CURRENT_PAGE } from '../../utils/actions'
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
-import arrow from '../../assets/images/arrow-right.svg';
-// import border1 from '../../assets/images/card-border1.png';
-// import border2 from '../../assets/images/card-border2.png';
-// import border3 from '../../assets/images/card-border3.png';
-// import border4 from '../../assets/images/card-border4.png';
 
 const Detail = () => {
 	// import the global state and dispatch
@@ -89,12 +84,10 @@ const Detail = () => {
 				<div className="card">
 					<div className={isFlipped ? "card-inner is-flipped" : "card-inner"}>
 
-						{/* Front of card */}
 						<div className="card-face card-face-front">
 							<img src={require(`../../assets/images/cards/${image}`).default} className='card-img' alt={name} />
 						</div>
 
-						{/* Back of card */}
 						<div className="card-face card-face-back">
 							<div className="card-content">
 								<div className="card-body">
@@ -113,13 +106,13 @@ const Detail = () => {
 					<button className="btn prev" onClick={prev}>
 						<svg className='arrow' width="20" height="33" viewBox="0 0 20 33" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
-							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" stroke-opacity="0.63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" strokeOpacity="0.63" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
 						</svg>
 					</button>
 					<button className="btn next" onClick={next}>
 						<svg className='arrow' width="20" height="33" viewBox="0 0 20 33" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
-							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" stroke-opacity="0.63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" strokeOpacity="0.63" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
 						</svg>
 					</button>
 				</div>
