@@ -10,6 +10,7 @@ import ApolloClient from 'apollo-boost';
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 import Dashboard from "./components/Dashboard";
+import Shuffle from "./components/Shuffle"
 
 import { useStoreContext } from "./utils/GlobalState"
 
@@ -49,6 +50,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        {/* <Shuffle/> */}
       {showNav &&  <Nav />}
           <Switch>
             <Route exact path="/" component={Main}/>

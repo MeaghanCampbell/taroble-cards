@@ -17,23 +17,27 @@ const Shuffle = () => {
     const props = useSpring({
       to: [
           { opacity: 1,
-			transform: 'rotateX(0deg)',
-			y: 0
-			},
+            transform: 'rotateX(0deg)',
+            y: 0,
+            height: 500
+          },
           { opacity: .99 },
           { opacity: 1 },
           { opacity: 0,
-			transform: 'rotateX(180deg)',
-			y: 750
-		 }
+            transform: 'rotateX(180deg)',
+            y: 750,
+            height: 0
+          }
         ],
       from: { 
-		opacity: 0,
-		transform: 'rotateX(180deg)',
-		y: 750
-	  },
-      delay: 100,
-    })
+          opacity: 0,
+          transform: 'rotateX(180deg)',
+          y: 750,
+          x: 500,
+          height: 0
+        },
+          delay: 100,
+        })
 
     useEffect (()=>{
         // display messages
