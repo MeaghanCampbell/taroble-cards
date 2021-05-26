@@ -244,8 +244,8 @@ input:-webkit-autofill {
 }
 
 .card {
-  width: 253px;
-  height: 374px;
+  width: 35vh;
+  height: 100%;
   position: relative;
   top: 50%;
   left: 50%;
@@ -310,7 +310,7 @@ input:-webkit-autofill {
   width: 100%;
   background-image: url('./assets/images/card-border1.png');
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -424,6 +424,10 @@ img {
   overflow-y: scroll;
 }
 
+.dashboard-container::-webkit-scrollbar {
+  display: none;
+}
+
 .user {
   font-family: 'Drugs';
   font-size: 30px;
@@ -436,9 +440,10 @@ img {
 .card-container {
   width: 90vw;
   height: 30vh;
+  max-width: 500px;
   background: black;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 10px rgba(255,255,255,0.5); 
+  -webkit-box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
   box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
   margin-bottom: 20px;
 }
