@@ -10,7 +10,7 @@ import Reading from '../Reading';
 
 const Dashboard = () => {
 	// import the global state and dispatch
-	const [state, dispatch] = useStoreContext();
+	const [, dispatch] = useStoreContext();
 
 	const [isLoading, setIsLoading] = useState(true);
 	const { data: userData } = useQuery(QUERY_ME, {
@@ -28,7 +28,7 @@ const Dashboard = () => {
 		if (username || userData) {
 			setIsLoading(false);
 		}
-	}, [username, userData]);
+	}, [username, userData, dispatch]);
 
 	if (isLoading) {
 		return <Loader />

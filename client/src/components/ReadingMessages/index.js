@@ -23,13 +23,11 @@ const messages = [
 
 const ReadingMessages = () => {
     // import the global state and dispatch
-    const [state, dispatch] = useStoreContext();
+    const [, dispatch] = useStoreContext();
     
     const { Random } = require("random-js");
-    const random = new Random
-    let messageOne = random.die(messages.length-1)
-    let messageTwo = random.die(messages.length-1)
-    let messageThree = random.die(messages.length-1)
+    const random = new Random()
+    const messageOne = random.die(messages.length-1)
 
     const [message, setMessage] = useState(messages[messageOne])
     const props = useSpring({
@@ -44,6 +42,9 @@ const ReadingMessages = () => {
     })
 
     useEffect (()=>{
+      
+      let messageTwo = random.die(messages.length-1)
+      let messageThree = random.die(messages.length-1)
         // keep messages unique
         while (messageOne === messageTwo) {
             messageTwo = random.die(messages.length-1)
@@ -65,7 +66,7 @@ const ReadingMessages = () => {
           // generate a new reading and save it to the currentReading in global state
           currentPage: 'detail'
         })}, 9000);
-    }, [])
+    })
     
 
   return (

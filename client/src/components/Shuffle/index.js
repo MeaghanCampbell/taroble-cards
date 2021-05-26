@@ -68,7 +68,7 @@ const Shuffle = () => {
         currentPage: 'detail'
       })
     }, 9000);
-  }, [])
+  }, [ dispatch , futureCard, presentCard ])
 
 
   return (
@@ -76,7 +76,7 @@ const Shuffle = () => {
       <div className='border'></div>
       <animated.div style={props}>
         <h3 className='detail-header'>{title}</h3>
-        <img className='reading-messages' src={require(`../../assets/images/cards/${card}`).default} className='card-img' />
+        <img className='card-img' src={require(`../../assets/images/cards/${card}`).default} alt={title} />
       </animated.div>
       <footer className='border'></footer>
     </div>

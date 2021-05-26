@@ -5,7 +5,7 @@ import { CURRENT_PAGE, CURRENT_READING, PREVIOUS_PAGE } from '../../utils/action
 
 const Reading = ({ userData }) => {
     // import the global state and dispatch
-	const [state, dispatch] = useStoreContext();
+	const [, dispatch] = useStoreContext();
     
     const loadDetail = reading => {
 		dispatch({

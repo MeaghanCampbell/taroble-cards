@@ -5,9 +5,9 @@ const random = new Random();
 
 class Reading {
     constructor(
-        past = new Card,
-        present = new Card,
-        future = new Card,
+        past = new Card(),
+        present = new Card(),
+        future = new Card(),
     ) {
         this.past = past;
         this.present = present;
@@ -15,7 +15,7 @@ class Reading {
     }
 
     generateReading() {
-        const cards = new Cards;
+        const cards = new Cards();
         let deck = []
         
         for (const key in cards) {

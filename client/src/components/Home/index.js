@@ -1,16 +1,17 @@
 import React from 'react';
-import Reading from '../../lib/Reading'
+// import Reading from '../../lib/Reading'
 import { CURRENT_READING, CURRENT_PAGE } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
 
 const Home = () => {
 	// import the global state and dispatch
-	const [state, dispatch] = useStoreContext();
+	const [, dispatch] = useStoreContext();
 
 	// generate a new reading and save it to the currentReading in global state
 	const getReading = () => {
-		const reading = new Reading;
+		const Reading = require('../../lib/Reading');
+		const reading = new Reading();
 		
 		dispatch({
 			type: CURRENT_READING,

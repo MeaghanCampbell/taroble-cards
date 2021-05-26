@@ -5,7 +5,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 
 const Loading = () => {
   // import the global state and dispatch
-  const [state, dispatch] = useStoreContext();
+  const [, dispatch] = useStoreContext();
 
   useEffect(() => {
     setTimeout(function () {
@@ -14,7 +14,7 @@ const Loading = () => {
         currentPage: 'home'
       })
     }, 9000);
-  }, [])
+  }, [dispatch])
 
 
   return (

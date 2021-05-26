@@ -16,21 +16,21 @@ const DonTTakeTheBait = require('./DonTTakeTheBait');
 
 class Cards {
     constructor(
-        hangInThere = new HangInThere,
-        iWokeUpLikeThis = new IWokeUpLikeThis,
-        roadkill = new Roadkill,
-        theSurgeon = new TheSurgeon,
-        youReGonnaDieAloneWithCats = new YouReGonnaDieAloneWithCats,
-        megadeath = new Megadeath,
-        theExtremeMakeover = new TheExtremeMakeover,
-        donTWakeTheDragon = new DonTWakeTheDragon,
-        iMGood = new IMGood,
-        charge = new Charge,
-        uselessGarbage = new UselessGarbage,
-        theBoujieAlien = new TheBoujieAlien,
-        youShallNotPass = new YouShallNotPass,
-        flyinSolo = new FlyinSolo,
-        donTTakeTheBait = new DonTTakeTheBait
+        hangInThere = new HangInThere(),
+        iWokeUpLikeThis = new IWokeUpLikeThis(),
+        roadkill = new Roadkill(),
+        theSurgeon = new TheSurgeon(),
+        youReGonnaDieAloneWithCats = new YouReGonnaDieAloneWithCats(),
+        megadeath = new Megadeath(),
+        theExtremeMakeover = new TheExtremeMakeover(),
+        donTWakeTheDragon = new DonTWakeTheDragon(),
+        iMGood = new IMGood(),
+        charge = new Charge(),
+        uselessGarbage = new UselessGarbage(),
+        theBoujieAlien = new TheBoujieAlien(),
+        youShallNotPass = new YouShallNotPass(),
+        flyinSolo = new FlyinSolo(),
+        donTTakeTheBait = new DonTTakeTheBait()
     ) {
         this.hangInThere = hangInThere;
         this.iWokeUpLikeThis = iWokeUpLikeThis;
