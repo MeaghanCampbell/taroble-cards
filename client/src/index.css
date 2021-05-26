@@ -119,10 +119,33 @@ header {
 /* Homepage Styles */
 
 .home-section {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  height: 93vh;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.border {
+  width: 100vw;
+  height: 100px;
+  background-image: url('./assets/images/home_boarder_top.png');
+  background-position: center;
+  background-size: cover;
+}
+
+footer.border {
+  transform: scaleY(-1);
+}
+
+.home-container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .title-home {
@@ -480,9 +503,27 @@ a:link {
 
 img{
   height: 80%;
-  /* margin: 10px; */
 }
 
-img:nth-child(2){
-  margin: 0 10px;
+/* Media Queries */
+
+@media screen and (min-device-width: 445px) {
+  .border {
+    background-image: none;
+  }
+}
+
+@media screen and (max-device-width: 400px) {
+  .title-nav {
+    font-size: 5vw;
+  }
+
+  .title-home {
+    font-size: 12vw;
+  }
+
+  .btn {
+    width: 7vw;
+  }
+  
 }
