@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import arrow from '../../assets/images/arrow-right.svg'
 import { useStoreContext } from "../../utils/GlobalState";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_READING } from '../../utils/mutations';
 import { CURRENT_PAGE } from '../../utils/actions'
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
+import arrow from '../../assets/images/arrow-right.svg';
+// import border1 from '../../assets/images/card-border1.png';
+// import border2 from '../../assets/images/card-border2.png';
+// import border3 from '../../assets/images/card-border3.png';
+// import border4 from '../../assets/images/card-border4.png';
 
 const Detail = () => {
 	// import the global state and dispatch
@@ -96,7 +100,7 @@ const Detail = () => {
 								<div className="card-body">
 									<div className='desc'>
 										<h3 className="card-desc-head">Description</h3>
-										<div className="card-text">{text}</div>
+										<div className='desc-text'>{text}</div>
 									</div>
 								</div>
 							</div>
@@ -116,9 +120,16 @@ const Detail = () => {
 			</div>
 			<div className="outside-btns">
 				<button onClick={clickhandler}>{isFlipped ? 'view card' : 'view description'}</button>
-				{Auth.loggedIn() ? (
-					<button onClick={saveReading}>save reading</button>
-				) : null}
+				{Auth.loggedIn() && previousPage !== 'dashboard' ? (
+					<button> 
+						<Link to="/dashboard" className="btn-text" onClick={saveReading}>save reading </Link>
+					</button>
+				) : null } 
+				{Auth.loggedIn() && previousPage === 'dashboard' ?(
+					<button> 
+						<Link className="btn-text" to="/dashboard"> dashboard </Link>
+					</button>
+				) : null } 
 			</div>
 
 		</section>

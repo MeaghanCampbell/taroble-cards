@@ -35,7 +35,7 @@ const StoreProvider = ({ value = [], ...props}) => {
             }
             
         },
-        currentPage: 'detail',
+        currentPage: 'loading',
         previousPage: 'home'
     })
 
