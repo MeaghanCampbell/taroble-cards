@@ -32,7 +32,7 @@ const StoreProvider = ({ value = [], ...props }) => {
                 "presentText": "That innate thing you think makes you so unique? It's called morning breath. Deal with it."
             }
         },
-        currentPage: 'detail',
+        currentPage: 'loading',
         previousPage: 'home'
     })
 

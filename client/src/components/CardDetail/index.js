@@ -111,25 +111,31 @@ const Detail = () => {
 
 				<div className="card-slider-btn-container">
 					<button className="btn prev" onClick={prev}>
-						<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
+						<svg className='arrow' width="20" height="33" viewBox="0 0 20 33" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" stroke-opacity="0.63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
 					</button>
 					<button className="btn next" onClick={next}>
-						<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
+						<svg className='arrow' width="20" height="33" viewBox="0 0 20 33" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 30L16.2535 17.2198C16.6613 16.8266 16.6613 16.1734 16.2535 15.7802L3 3" stroke="#D0A863" stroke-opacity="0.63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
 					</button>
 				</div>
 			</div>
 			<div className="outside-btns">
 				<button onClick={clickhandler}>{isFlipped ? 'view card' : 'view description'}</button>
 				{Auth.loggedIn() && previousPage !== 'dashboard' ? (
-					<button> 
+					<button>
 						<Link to="/dashboard" className="btn-text" onClick={saveReading}>save reading </Link>
 					</button>
-				) : null } 
-				{Auth.loggedIn() && previousPage === 'dashboard' ?(
-					<button> 
+				) : null}
+				{Auth.loggedIn() && previousPage === 'dashboard' ? (
+					<button>
 						<Link className="btn-text" to="/dashboard"> dashboard </Link>
 					</button>
-				) : null } 
+				) : null}
 			</div>
 
 		</section>
