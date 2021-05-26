@@ -33,7 +33,7 @@ const Nav = () => {
 		dispatch({
 			type: CURRENT_PAGE,
 			currentPage: 'dashboard'
-		  })
+		})
 	}
 
 	const signUp = event => {
@@ -45,14 +45,14 @@ const Nav = () => {
 		dispatch({
 			type: CURRENT_PAGE,
 			currentPage: 'signUp'
-		  })
+		})
 	}
 
 	const home = event => {
 		dispatch({
 			type: CURRENT_PAGE,
 			currentPage: 'home'
-		  })
+		})
 	}
 
 	return (
@@ -65,7 +65,7 @@ const Nav = () => {
 						<ul>
 							{currentPage === 'dashboard' || (currentPage === 'detail' && previousPage === 'dashboard') ? (
 								<li>
-									<Link to="/" onClick={home} className="signup-login">GET ANOTHER READING</Link>
+									<Link to="/" onClick={home} className="signup-login">NEW READING</Link>
 								</li>
 							) : (
 								<li>
@@ -75,7 +75,7 @@ const Nav = () => {
 							<li>
 								<Link to="/" onClick={logout} className="signup-login">
 									LOGOUT
-                				</Link>
+                </Link>
 							</li>
 						</ul>
 					</>

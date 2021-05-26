@@ -48,7 +48,7 @@ const Login = (props) => {
     }
   };
   return (
-    <div>
+    <main>
       <form className='login-signup-form' onSubmit={handleFormSubmit}>
         <div>
           <p className='form-header'>LOGIN </p>
@@ -85,14 +85,15 @@ const Login = (props) => {
           </div>
         </div>
 
+        {error && <div className='error'>login failed</div>}
+
 				<div>
 					<button className='sign-in-btn' type="submit">
 						LOGIN
           </button>
 				</div>
 			</form>
-			{error && <div>login failed.</div>}
-		</div>
+		</main>
 	)
 }
 

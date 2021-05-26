@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import arrow from '../../assets/images/arrow-right.svg'
 import { useStoreContext } from "../../utils/GlobalState";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_READING } from '../../utils/mutations';
 import { CURRENT_PAGE } from '../../utils/actions'
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
-
+import arrow from '../../assets/images/arrow-right.svg';
+// import border1 from '../../assets/images/card-border1.png';
+// import border2 from '../../assets/images/card-border2.png';
+// import border3 from '../../assets/images/card-border3.png';
+// import border4 from '../../assets/images/card-border4.png';
 
 const Detail = () => {
 	// import the global state and dispatch
@@ -35,7 +38,7 @@ const Detail = () => {
 		})
 
 		// window.location.assign('/dashboard')
-		
+
 	};
 
 	const cards = [
@@ -57,10 +60,7 @@ const Detail = () => {
 			name: currentReading.future.name,
 			text: currentReading.future.futureText,
 		}
-
-
 	];
-
 
 	// create a state to access image index
 	const [card, setCardIndex] = useState(0);
@@ -79,33 +79,37 @@ const Detail = () => {
 	// subtract index by 1
 	const prev = () => setCardIndex(index => checkIndexNumber(index - 1));
 
-
 	const [isFlipped, setIsFlipped] = useState(false);
 	const clickhandler = () => setIsFlipped(!isFlipped);
 	return (
 		<section className="detail-section">
 
-			<h3 className="detail__header">{heading}</h3>
-			<div className="card__slider--container">
+			<h3 className="detail-header">{heading}</h3>
+			<div className="card-slider-container">
 				<div className="card">
-					<div className={isFlipped ? "card__inner is-flipped" : "card__inner"}>
-						<div className="card__face card__face--front">
+					<div className={isFlipped ? "card-inner is-flipped" : "card-inner"}>
+
+						{/* Front of card */}
+						<div className="card-face card-face-front">
 							<img src={require(`../../assets/images/cards/${image}`).default} className='card-img' alt={name} />
 						</div>
-						<div className="card__face card__face--back">
-							<div className="card__content">
-								<div className="card__body">
-									<h3 className="card__desc__head">Description</h3>
-									<div className="underline"></div>
-									<div className="card__text">{text}</div>
 
+						{/* Back of card */}
+						<div className="card-face card-face-back">
+							<div className="card-content">
+								<div className="card-body">
+									<div className='desc'>
+										<h3 className="card-desc-head">Description</h3>
+										<div className='desc-text'>{text}</div>
+									</div>
 								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 
-				<div className="card__slider__btn__container">
+				<div className="card-slider-btn-container">
 					<button className="btn prev" onClick={prev}>
 						<object className='arrow' type="image/svg+xml" data={arrow}>arrow</object>
 					</button>
@@ -114,16 +118,16 @@ const Detail = () => {
 					</button>
 				</div>
 			</div>
-			<div className="outside__btns">
+			<div className="outside-btns">
 				<button onClick={clickhandler}>{isFlipped ? 'view card' : 'view description'}</button>
 				{Auth.loggedIn() && previousPage !== 'dashboard' ? (
 					<button> 
-						<Link to="/dashboard" onClick={saveReading}>save reading </Link>
+						<Link to="/dashboard" className="btn-text" onClick={saveReading}>save reading </Link>
 					</button>
 				) : null } 
 				{Auth.loggedIn() && previousPage === 'dashboard' ?(
 					<button> 
-						<Link to="/dashboard"> dashboard </Link>
+						<Link className="btn-text" to="/dashboard"> dashboard </Link>
 					</button>
 				) : null } 
 			</div>

@@ -27,7 +27,7 @@ body{
   min-height: 100vh;
   min-height: 100ww;
   position: relative;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 main{
@@ -160,6 +160,7 @@ align-items: center;
   text-decoration: none;
   color: #CC9B54;
   font-size: 2vh;
+  cursor: pointer;
 }
 
 input {
@@ -188,6 +189,13 @@ input:-webkit-autofill {
   color: #CC9B54;
 }
 
+.error {
+  font-family: 'Drugs';
+  color: white;
+  text-shadow: 0 0 20px white;
+  margin-top: 30px;
+}
+
 .sign-in-btn {
   margin-top: 30px;
 }
@@ -210,116 +218,176 @@ input:-webkit-autofill {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-.detail__header {
+
+.detail-header {
   font-family: 'Drugs';
   font-size: 40px;
   font-weight: 100;
   letter-spacing: 0.25em;
-  margin: 0;
+  margin-top: 20px;
   color: #cc9c549a;
-  padding: 5vh 0 0 0.25em;
+  padding: 3vh 0 0 0.25em;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 5rem;
-}
-.card__slider--container{
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-.card{
-    margin: 1rem 0;
-    width: 300px;
-    height: 420px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  /* margin-top: 0.5em; */
 }
 
-.card__inner{
-    width: 100%;
-    height: 100%;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    position: relative;
+.card-slider-container {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
-.card__inner.is-flipped{
-    transform: rotateY(180deg);
+.card {
+  width: 253px;
+  height: 374px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 60px;
 }
 
-.card__face{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
-.card__face--front img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.card-inner.is-flipped {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: rotateY(180deg);
 }
 
-.card__face--back{
-    background: #fff;
-    color: #CC9B54;
-    transform: rotateY(180deg);
-   
+.card-face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* overflow: hidden; */
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  background-color: black;
 }
-.card__desc__head{
+
+.card-face-front img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-face-back{
+  background: black;
+  color: #CC9B54;
+  transform: rotateY(180deg);
+  overflow: hidden;
+}
+
+.card-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: black;
+  padding: 3px;
+}
+
+.card-body {
+  height: 100%;
+  width: 100%;
+  background-image: url('./assets/images/card-border1.png');
+  background-position: center;
+  background-repeat: no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.desc {
+  font-family: 'Drugs';
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+  line-height: 2;
+  text-align: center;
+  border-radius: 10px;
+  color: rgb(119, 119, 119);
+  margin: 30px 0 20px 0;
+}
+
+.card-desc-head{
   font-family: 'Armwarmer';
   color: rgba(24, 23, 23, 0.863);
-  font-weight: normal;
-}
-.underline{
-  width: 80%;
-  height: 2px;
-  background-color: rgba(199, 199, 199, 0.418);
-  margin: 0 auto 1rem auto;
-}
-.card__body{
   font-size: 1.3rem;
-  line-height: 2;
-  letter-spacing: 2px;
-  padding: 1rem;
+  font-weight: normal;
+  border-bottom: 1px solid rgb(199, 199, 199);
+  padding: 0.25em 0;
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
-  color: rgb(119, 119, 119);
-
 }
 
-.card__slider__btn__container{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100%;
-    z-index: 1;
-    background: transparent;
-    display: flex;
-    justify-content: space-between;
+.desc-text {
+  height: 100%;
+  width: 85%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 0.75em;
 }
+
+.card-slider-btn-container{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 1;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-img {
+  object-fit: cover;
+  border-radius: 5px;
+  height: 100%;
+  background-color: black;
+  padding: 3px;
+}
+
+img {
+  margin: none !important;
+}
+
 .btn{
   width: 40px;
   height: 40vh;
   border: none;
   outline: none;
   cursor: pointer;
-  transition: .2s;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   background-color: black;
+  margin: 0;
 }
+
 .btn:hover{
- box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
+
 .prev {
   border-radius: 0 3px 3px 0;
 }
@@ -335,25 +403,25 @@ input:-webkit-autofill {
 .arrow {
   height: 3vh;
 }
-.outside__btns{
-    margin-top: 2rem;
-}
-.outside__btns button{
-  margin-right: 12px;
-}
 
-/* End of card details */
-
-
-/* Dashboard page */
-
-.dashboard-container {
-  height: 80vh;
+.outside-btns{
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* margin-top: 20px; */
+}
+
+/* Dashboard Styles */
+
+.dashboard-container {
+  height: 93vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
 }
 
 .user {
@@ -363,7 +431,6 @@ input:-webkit-autofill {
   text-align: center;
   color: #CC9B54;
   margin: 2rem 0;
-  /* position: fixed; */
 }
 
 .card-container {
@@ -373,7 +440,7 @@ input:-webkit-autofill {
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 10px rgba(255,255,255,0.5); 
   box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
-  /* margin: 2vh 0 0 2vh; */
+  margin-bottom: 20px;
 }
 
 .card-container-center {
@@ -392,6 +459,11 @@ input:-webkit-autofill {
   letter-spacing: 4px;
 }
 
+a:link {
+  text-decoration: none !important;
+  color:#CC9B54;
+}
+
 .cards{
   width: 100%;
   height: 90%;
@@ -403,7 +475,7 @@ input:-webkit-autofill {
 
 img{
   height: 80%;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 img:nth-child(2){
