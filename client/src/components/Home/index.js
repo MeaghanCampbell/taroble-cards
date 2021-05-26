@@ -1,5 +1,5 @@
 import React from 'react';
-import Reading from '../../lib/Reading'
+import { Reading } from '../../lib/Reading'
 import { CURRENT_READING, CURRENT_PAGE } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 

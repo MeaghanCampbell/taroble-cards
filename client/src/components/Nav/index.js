@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Reading from '../../lib/Reading'
+import { Reading } from '../../lib/Reading'
 import Auth from '../../utils/auth';
 import { CURRENT_PAGE, PREVIOUS_PAGE, CURRENT_READING } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
