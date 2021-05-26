@@ -4,6 +4,7 @@ import Home from "../Home";
 import CardDetail from "../CardDetail";
 import Loading from '../LoadingScreen';
 import ReadingMessages from '../ReadingMessages';
+import Shuffle from "../Shuffle"
 
 import { useStoreContext } from "../../utils/GlobalState"
 
@@ -19,6 +20,7 @@ const Main= () => {
 		{ currentPage === 'home' &&  <Home/> }
 		{ currentPage === 'loading' &&  <Loading/> }
 		{ currentPage === 'messages' &&  <ReadingMessages/> }
+		{ currentPage === 'shuffle' && <Shuffle/> }
 		{ currentPage === 'detail' &&  <CardDetail/> }
 		{ currentPage === 'login' &&  <Login/> }
 		{ currentPage === 'signUp' &&  <SignUp/> }

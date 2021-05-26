@@ -58,7 +58,7 @@ const ReadingMessages = () => {
         setTimeout(function(){ dispatch({
           type: CURRENT_PAGE,
           // generate a new reading and save it to the currentReading in global state
-          currentPage: 'detail'
+          currentPage: 'shuffle'
         }) 
         dispatch({
           type: PREVIOUS_PAGE,

@@ -10,7 +10,6 @@ import ApolloClient from 'apollo-boost';
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 import Dashboard from "./components/Dashboard";
-import Shuffle from "./components/Shuffle"
 
 import { useStoreContext } from "./utils/GlobalState"
 
@@ -41,7 +40,7 @@ function App() {
 	// console log the currentReading data
 	console.log(currentPage)
 
-  if (currentPage === 'loading' || currentPage === 'messages') {
+  if (currentPage === 'loading' || currentPage === 'messages' || currentPage === 'shuffle') {
     showNav = false;
   } else {
     showNav = true;
@@ -50,7 +49,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        {/* <Shuffle/> */}
       {showNav &&  <Nav />}
           <Switch>
             <Route exact path="/" component={Main}/>

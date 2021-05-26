@@ -6,20 +6,21 @@ import { useStoreContext } from "../../utils/GlobalState";
 const Shuffle = () => {
     // import the global state and dispatch
     const [state, dispatch] = useStoreContext();
-    
-    const { Random } = require("random-js");
-    const random = new Random
-    let messageOne = 'roadkill.png'
-    let messageTwo = 'megadeath.png'
-    let messageThree = 'charge.png'
+    // extract currentReading from the state object
+    const { currentReading } = state;
 
-    const [message, setMessage] = useState(messageOne)
+    let pastCard = currentReading.past.image
+    let presentCard = currentReading.present.image
+    let futureCard = currentReading.future.image
+
+    const [card, setCard] = useState(pastCard)
+    const [title, setTitle] = useState('Past')
     const props = useSpring({
       to: [
           { opacity: 1,
             transform: 'rotateX(0deg)',
-            y: 0,
-            height: 500
+            y: -60,
+            height: 450
           },
           { opacity: .99 },
           { opacity: 1 },
@@ -30,36 +31,50 @@ const Shuffle = () => {
           }
         ],
       from: { 
-          opacity: 0,
-          transform: 'rotateX(180deg)',
-          y: 750,
-          x: 500,
-          height: 0
-        },
-          delay: 100,
-        })
+        opacity: 0,
+        transform: 'rotateX(180deg)',
+        y: 750,
+        x: 0,
+        height: 0
+      },
+        delay: 100,
+    })
+
 
     useEffect (()=>{
-        // display messages
-        setTimeout(function(){ setMessage(messageTwo) }, 3000);
-        setTimeout(function(){ setMessage(messageThree) }, 6000);
+        // display cards
+        setTimeout(function(){ 
+          setCard(presentCard); 
+          setTitle('Present');
+        }, 3000);
+
+        setTimeout(function(){ 
+          setCard(futureCard); 
+          setTitle('Future');
+        }, 6000);
+
         // load detail page
-        setTimeout(function(){ dispatch({
-          type: CURRENT_PAGE,
-          // generate a new reading and save it to the currentReading in global state
-          currentPage: 'detail'
-        }) 
-        dispatch({
-          type: PREVIOUS_PAGE,
-          // generate a new reading and save it to the currentReading in global state
-          currentPage: 'detail'
-        })}, 9000);
+        setTimeout(function(){ 
+          dispatch({
+            type: CURRENT_PAGE,
+            // generate a new reading and save it to the currentReading in global state
+            currentPage: 'detail'
+          }) 
+          dispatch({
+            type: PREVIOUS_PAGE,
+            // generate a new reading and save it to the currentReading in global state
+            currentPage: 'detail'
+          })
+        }, 9000);
     }, [])
     
 
   return (
     <div className="load-img-container">
-        <animated.img className='reading-messages' style={props} src={require(`../../assets/images/cards/${message}`).default} className='card-img'></animated.img>
+      <animated.div style={props}> 
+        <h3 className='detail-header'>{title}</h3>
+        <img className='reading-messages'  src={require(`../../assets/images/cards/${card}`).default} className='card-img'/>
+      </animated.div>
     </div>
   )
 }
