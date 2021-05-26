@@ -57,9 +57,12 @@ const Nav = () => {
 
 	return (
 		<header>
+			{currentPage !== 'home' ? (
 				<h3>
 				<Link to="/" onClick={home} className='title-nav'>Taroble Cards</Link>
 				</h3>
+			): (<h3></h3>)}
+
 				{Auth.loggedIn() ? (
 					<>
 						<ul>
