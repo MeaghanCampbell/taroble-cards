@@ -13,7 +13,7 @@ const Nav = () => {
 
 	// generate a new reading and save it to the currentReading in global state
 	const getReading = () => {
-		const reading = new Reading();
+		const reading = new Reading;
 		
 		dispatch({
 			type: CURRENT_READING,
