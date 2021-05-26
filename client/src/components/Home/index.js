@@ -1,5 +1,5 @@
 import React from 'react';
-import { Reading } from '../../lib/Reading'
+import Reading from '../../lib/Reading'
 import { CURRENT_READING, CURRENT_PAGE } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
@@ -10,7 +10,7 @@ const Home = () => {
 
 	// generate a new reading and save it to the currentReading in global state
 	const getReading = () => {
-		const reading = new Reading;
+		const reading = new Reading();
 		
 		dispatch({
 			type: CURRENT_READING,
