@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Reading from '../../lib/Reading'
 import Auth from '../../utils/auth';
-import { CURRENT_PAGE, PREVIOUS_PAGE } from '../../utils/actions';
+import { CURRENT_PAGE, PREVIOUS_PAGE, CURRENT_READING } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
 
 const Nav = () => {
@@ -9,6 +10,23 @@ const Nav = () => {
     const [state, dispatch] = useStoreContext();
     // extract currentPage from the state object
     const { currentPage, previousPage } = state;
+
+	// generate a new reading and save it to the currentReading in global state
+	const getReading = () => {
+		const reading = new Reading;
+		
+		dispatch({
+			type: CURRENT_READING,
+			// generate a new reading and save it to the currentReading in global state
+			currentReading: reading.generateReading()
+		})
+
+		dispatch({
+			type: CURRENT_PAGE,
+			// send user to messages component
+			currentPage: 'messages'
+		})
+	}
 
 	const logout = event => {
 		event.preventDefault();
@@ -68,7 +86,7 @@ const Nav = () => {
 						<ul>
 							{currentPage === 'dashboard' || (currentPage === 'detail' && previousPage === 'dashboard') ? (
 								<li>
-									<Link to="/" onClick={home} className="signup-login">NEW READING</Link>
+									<Link to="/" onClick={getReading} className="signup-login">NEW READING</Link>
 								</li>
 							) : (
 								<li>
