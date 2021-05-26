@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Reading from '../../lib/Reading'
+import Reading from '../../lib/Reading'
 import Auth from '../../utils/auth';
 import { CURRENT_PAGE, PREVIOUS_PAGE, CURRENT_READING } from '../../utils/actions';
 import { useStoreContext } from "../../utils/GlobalState";
@@ -13,13 +13,11 @@ const Nav = () => {
 
 	// generate a new reading and save it to the currentReading in global state
 	const getReading = () => {
-		const Reading = require('../../lib/Reading');
-		let reading = new Reading();
 		
 		dispatch({
 			type: CURRENT_READING,
 			// generate a new reading and save it to the currentReading in global state
-			currentReading: reading.generateReading()
+			currentReading: Reading.generateReading()
 		})
 
 		dispatch({
