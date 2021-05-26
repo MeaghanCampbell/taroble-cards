@@ -1,7 +1,7 @@
 {
-  "name": "user-login-template",
+  "name": "taroble-cards",
   "version": "1.0.0",
-  "description": "Just a template made using Mongoose, Apollo, and GraphQL with basic user login, validation and JWT Authentication functionality",
+  "description": "Tarot readings with attitude",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -12,16 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jscottrumptz/user-login-template.git"
+    "url": "git+https://github.com/MeaghanCampbell/taroble-cards.git"
   },
   "author": "J. Scott Rumptz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jscottrumptz/user-login-template/issues"
+    "url": "https://github.com/MeaghanCampbell/taroble-cards/issues"
   },
-  "homepage": "https://github.com/jscottrumptz/user-login-template#readme",
+  "homepage": "https://github.com/MeaghanCampbell/taroble-cards#readme",
   "dependencies": {
-    "animejs": "^3.2.1",
     "if-env": "^1.0.4",
     "moment": "^2.29.1",
     "react-router-dom": "^5.2.0"
