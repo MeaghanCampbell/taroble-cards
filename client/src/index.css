@@ -27,7 +27,10 @@ body{
   height: 100vh;
   width: 100vw;
   position: relative;
-  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 main{
@@ -42,8 +45,9 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active
 {
- -webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important;
- -webkit-text-fill-color: #CC9B54;
+  box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important;
+  -webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important;
+  -webkit-text-fill-color: #CC9B54;
 }
 
 ul li {
@@ -540,13 +544,13 @@ img{
   }
 }
 
-@media screen and (max-device-width: 400px) {
+@media screen and (max-device-width: 430px) {
   .title-nav {
     font-size: 5vw;
   }
 
   .title-home {
-    font-size: 12vw;
+    font-size: 11vw;
   }
 
   .btn {
