@@ -41,7 +41,7 @@ Head to https://taroble-cards.herokuapp.com/ and find out what terrible fate awa
 
 ## 🧠 Features
 - **Get a Reading** - *See what terrible news awaits!*
-- **Create an Account** - *Save your readings and check back for accurcy!*
+- **Create an Account** - *Save your readings and check back for accuracy!*
 
 
 ---
