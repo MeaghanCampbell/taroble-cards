@@ -3,28 +3,7 @@ const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
 const files_to_cache = [
-    './index.html',
-    // '../src/assets/images/cards/boujie-alien.png',
-    // '../src/assets/images/cards/charge.png',
-    // '../src/assets/images/cards/die-alone-cats.png',
-    // '../src/assets/images/cards/dont-take-bait.png',
-    // '../src/assets/images/cards/extreme-makeover.png',
-    // '../src/assets/images/cards/flying-high.png',
-    // '../src/assets/images/cards/hang-in-there.png',
-    // '../src/assets/images/cards/im-good.png',
-    // '../src/assets/images/cards/megadeath.png',
-    // '../src/assets/images/cards/roadkill.png',
-    // '../src/assets/images/cards/shall-not-pass.png',
-    // '../src/assets/images/cards/surgeon.png',
-    // '../src/assets/images/cards/useless-garbage.png',
-    // '../src/assets/images/cards/wake-dragon.png',
-    // '../src/assets/images/cards/woke-up-like-this.png',
-    // '../src/assets/images/arrow-right.svg',
-    // '../src/assets/images/card-border.svg',
-    // '../src/assets/images/card-border1.png',
-    // '../src/assets/images/card-border2.png',
-    // '../src/assets/images/card-border3.png',
-    // '../src/assets/images/card-border4.png'
+    './index.html'
 ]
 
 self.addEventListener('install', function(event) {
